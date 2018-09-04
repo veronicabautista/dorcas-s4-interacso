@@ -1,28 +1,50 @@
-.App {
-  text-align: center;
+body {
+  background-color: darkblue;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.container__all {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto;
+} 
+
+.statistics__container {
+  color: orange;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 134px;
+  grid-gap: 27px;
+}
+
+.statistics__data {
   padding: 20px;
+}
+
+.statistics__chart {
+  width: auto;
+  height: 535px;
   color: white;
+  display: grid;
+  grid-template-columns:  repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 90px;
+  margin: 30px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.chart-commits {
+  background-color: rgba(23, 81, 127, 0.6);
+  padding: 40px;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.chart-hours {
+  background-color: rgba(23, 81, 127, 0.6);
+  padding: 40px;
 }
