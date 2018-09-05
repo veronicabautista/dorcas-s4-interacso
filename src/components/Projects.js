@@ -3,7 +3,7 @@ import React from "react";
 class Projects extends React.Component {
   render() {
     return (
-      <div className="main__container">
+      <div className="main__container hijo">
         <div className="statistics__container">
           <div className="statistics__data projects">
             <div className="data-number"><p>15</p></div>

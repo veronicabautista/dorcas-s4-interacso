@@ -1,3 +1,26 @@
+#root {
+  width: 100%;
+  overflow-x: hidden; }
+
+.App {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  left: 0; }
+
+.hijo {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0; }
+
+.slideleft1 {
+  transition: 0.5s;
+  left: -100vw; }
+
+.slidereset {
+  transition: 0.5s;
+  left: 0; }
+
 .header__title {
   display: flex;
   color: #ffffff; }
