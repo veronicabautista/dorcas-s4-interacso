@@ -1,3 +1,6 @@
+@import "styles/core/variables";
+@import "styles/core/calendar";
+
 .App {
   text-align: center; }
 
