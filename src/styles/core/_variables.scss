@@ -1,0 +1,78 @@
+
+$night-blue: #061135;
+$bright-light-blue: #3dcef0;
+$grey: #7f7f7f;
+$vermillion: #fa2913;
+$golden: #f6c500;
+$light-blue: #31cef2;
+$light-navy: #17517f;
+$white: #ffffff;
+$green: #7ed321;
+$squash: #f5a623;
+$water:#4a90e2;
+$dark-peach: #e37c61;
+$dark-sky-blue: #32a4e3;
+$light-green: #b8e986;
+
+// general
+$pagesBackground: $night-blue;
+$footerNumber:$light-navy;
+$footerDetails: $dark-sky-blue;
+$titles:$white;
+$paragraph:$white;
+$numbers:$white;
+// calendar
+$selectedDay:$bright-light-blue;
+$deadlineFinished: $grey;
+$deadlineunFinished: $vermillion;
+$deadlineClose: $golden;
+$futureEvent:$light-blue;
+$futureDeadline:$light-blue;
+$eventDetail:$light-blue;
+$calendarDayContainer:$light-navy;
+// projects
+$statisticsDataProjects: $bright-light-blue;
+$statisticsDataTasks:$green;
+$statisticsDataWeeks:$squash;
+$statisticsDataCommits:$water;
+// detailproject
+$statisticsDataTotalHours: $squash;
+$statisticsDataProgress:$bright-light-blue;
+$statisticsDataHoursPerWeek: $water;
+$statisticsDataProjectCommit: $dark-peach;
+$chartTasks:$light-navy;
+$chartContributors: $dark-sky-blue;
+// team
+$averageContainerTasks: $bright-light-blue;
+$averageContainerCommits: $squash;
+$peopleContainer:$light-navy;
+// bar charts
+$chartFirstBar: $dark-sky-blue;
+$chartSecondBar: $golden;
+$chartThirdBar: $light-green;
+$chartFourthBar: $dark-peach;
+$chartFifthBar: $squash;
+// dots charts
+$chartDotsFinished: $bright-light-blue;
+$chartDotsFinishedText:$bright-light-blue;
+$chartDotsUnfinished: $squash;
+$chartDotsUnfinishedText: $squash;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
