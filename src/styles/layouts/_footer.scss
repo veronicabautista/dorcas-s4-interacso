@@ -1,0 +1,14 @@
+.footer__container {
+  display:flex;
+  color: $titles;
+}
+
+.footer__notif-details {
+  display: grid;
+  width: 1729px;
+  grid-template-columns: 288px 1fr 230px;
+}
+
+.footer__notif-number {
+  width: 395px;
+}
