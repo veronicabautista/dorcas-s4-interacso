@@ -1,4 +1,5 @@
 import React from 'react';
+import Env from '../data/.env.json';
 
 class Calendar extends React.Component {
   makeCalendarStructure() {
@@ -21,7 +22,7 @@ class Calendar extends React.Component {
           withCredentials: true,
           headers: {
             'Cache-Control': 'no-cache',
-            'Authorization': ,
+            'Authorization': Env.token,
             'Content-Type': 'application/json'
           }
         }
@@ -35,6 +36,8 @@ class Calendar extends React.Component {
     }
 
   render() {
+    console.log(Env.token);
+    console.log('hola estoy funcionando')
     return (
       <React.Fragment>
         {this.makeCalendarStructure()}
