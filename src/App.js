@@ -10,15 +10,31 @@ class App extends Component {
     super(props);
     this.apiService = 'https://databoards-api.interacso.com/';
 
-    setTimeout(function(){
-      document.querySelector('.App').classList.toggle('slideleft1');
-    }, 2000);
+    this.state = {
+      "currentView": 0,
+      "currentTimeout": 3000
+    }
 
-    setTimeout(function(){
-      document.querySelector('.App').classList.toggle('slidereset');
-    }, 5000);
+    this.slideDashboard = this.slideDashboard.bind(this);
+
+    setInterval(this.slideDashboard, this.state.currentTimeout);
 
   }
+
+  slideDashboard() {
+    if (this.state.currentView == 0) {
+      document.querySelector('.App').classList.toggle('slideleft1');
+      this.setState({
+        "currentView": this.state.currentView + 1
+      });
+    } else {
+      document.querySelector('.App').classList.toggle('slidereset');
+      this.setState({
+        "currentView": 0
+      });
+    }
+  }
+
   render() {
     return (
       <div className="App">
