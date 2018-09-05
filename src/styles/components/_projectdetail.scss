@@ -1,0 +1,17 @@
+.chart__project--completed-tasks {
+  width: 1035px;
+  height: 588px;
+  background-color: $charttasks;
+  margin-right: 25px;
+}
+
+.chart__project--top-contributors {
+  width: 685px;
+  height: 588px;
+  background-color: $chartcontributors;
+}
+
+.statistics__charts {
+  display: flex;
+
+}

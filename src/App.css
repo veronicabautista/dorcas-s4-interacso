@@ -95,3 +95,17 @@ body {
 .chart-hours {
   background-color: rgba(23, 81, 127, 0.6);
   padding: 40px; }
+
+.chart__project--completed-tasks {
+  width: 1035px;
+  height: 588px;
+  background-color: #17517f;
+  margin-right: 25px; }
+
+.chart__project--top-contributors {
+  width: 685px;
+  height: 588px;
+  background-color: #32a4e3; }
+
+.statistics__charts {
+  display: flex; }
