@@ -1,35 +1,28 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-@import "styles/core/variables";
-@import "styles/core/calendar";
-
-.App {
-  text-align: center; }
-=======
-=======
-.footer__container {
-  display: flex;
-  color: #ffffff; }
-
-.footer__notif-details {
-  display: grid;
-  width: 1729px;
-  grid-template-columns: 288px 1fr 230px; }
-
-.footer__notif-number {
-  width: 395px; }
-
 .header__title {
   display: flex;
   color: #ffffff; }
 
->>>>>>> master
+.table__calendar {
+  border-collapse: collapse;
+  margin: 0 auto; }
+
+.table__calendartable, .calendar__day, .calendar__week {
+  border: 1px solid #17517f; }
+
+.calendar__day {
+  width: 350px;
+  height: 210px;
+  display: inline-block; }
+
+.callendar__day--number {
+  color: #ffffff;
+  vertical-align: top; }
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: #061135; }
->>>>>>> master
 
 .container__all {
   margin: 0;
@@ -70,3 +63,15 @@ body {
 .chart-hours {
   background-color: rgba(23, 81, 127, 0.6);
   padding: 40px; }
+
+.footer__container {
+  display: flex;
+  color: #ffffff; }
+
+.footer__notif-details {
+  display: grid;
+  width: 1729px;
+  grid-template-columns: 288px 1fr 230px; }
+
+.footer__notif-number {
+  width: 395px; }

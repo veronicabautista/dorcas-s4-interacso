@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import Projects from './components/Projects';
-import './App.css';
-<<<<<<< HEAD
-import Calendar from './components/Calendar';
-=======
 import Header from './components/Header';
 import Footer from './components/Footer';
->>>>>>> master
+import Projects from './components/Projects';
+import './App.css';
+import Calendar from './components/Calendar';
 
 class App extends Component {
   constructor(props){
@@ -15,20 +12,9 @@ class App extends Component {
   }
   render() {
     return (
-<<<<<<< HEAD
-<<<<<<< HEAD
       <div className="App">
         <Calendar apiService = {this.apiService}/>
-=======
-      <div className="container__all">
         <Projects />
->>>>>>> master
-=======
-      <div className="App">
-        <Header />
-        <Projects />    
-        <Footer />
->>>>>>> master
       </div>
     );
   }
