@@ -1,5 +1,6 @@
 .footer__container {
-  display: flex; }
+  display: flex;
+  color: #ffffff; }
 
 .footer__notif-details {
   display: grid;
@@ -10,4 +11,51 @@
   width: 395px; }
 
 .header__title {
-  display: flex; }
+  display: flex;
+  color: #ffffff; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #061135; }
+
+.container__all {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto; }
+
+.statistics__container {
+  color: orange;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 134px;
+  grid-gap: 27px; }
+
+.statistics__data {
+  padding: 20px; }
+
+.statistics__chart {
+  width: auto;
+  height: 535px;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 90px;
+  margin: 30px; }
+
+.chart-commits {
+  background-color: rgba(23, 81, 127, 0.6);
+  padding: 40px; }
+
+.chart-hours {
+  background-color: rgba(23, 81, 127, 0.6);
+  padding: 40px; }
