@@ -1,15 +1,32 @@
+.footer__container {
+  display: flex;
+  color: #ffffff; }
+
+.footer__notif-details {
+  display: grid;
+  width: 1729px;
+  grid-template-columns: 288px 1fr 230px; }
+
+.footer__notif-number {
+  width: 395px; }
+
+.header__title {
+  display: flex;
+  color: #ffffff; }
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #061135; }
+  padding: 0; }
 
-.container__all {
+p {
   margin: 0;
-  padding: 0;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center; }
+  padding: 0; }
+
+.App {
+  margin: 0;
+  padding: 75px 50px 75px 41px;
+  background-color: #061135;
+  font-family: "Montserrat", sans-serif; }
 
 .main__container {
   display: grid;
@@ -17,11 +34,36 @@ body {
   margin: auto; }
 
 .statistics__container {
-  color: orange;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 260px 304px;
   grid-template-rows: 134px;
   grid-gap: 27px; }
+
+.projects {
+  background-color: #3dcef0; }
+
+.tasks {
+  background-color: #7ed321; }
+
+.weeks {
+  background-color: #f5a623; }
+
+.commits {
+  background-color: #4a90e2; }
+
+.hours {
+  background-color: #e37c61; }
+
+.data-number {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 600;
+  margin: 0; }
+
+.data-tags {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500; }
 
 .statistics__data {
   padding: 20px; }
@@ -34,12 +76,20 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-gap: 90px;
-  margin: 30px; }
+  margin-top: 70px; }
 
 .chart-commits {
-  background-color: rgba(23, 81, 127, 0.6);
-  padding: 40px; }
+  background-color: #17517f;
+  padding-top: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  padding-left: 30px; }
 
 .chart-hours {
-  background-color: rgba(23, 81, 127, 0.6);
-  padding: 40px; }
+  background-color: #17517f;
+  padding-top: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  padding-left: 30px; }
