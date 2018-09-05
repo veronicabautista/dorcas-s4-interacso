@@ -1,17 +1,13 @@
-.header__title {
-  display: flex;
-}
-
 .footer__container {
-  display:flex;
-}
+  display: flex; }
 
 .footer__notif-details {
   display: grid;
   width: 1729px;
-  grid-template-columns: 288px 1fr 230px;
-}
+  grid-template-columns: 288px 1fr 230px; }
 
 .footer__notif-number {
-  width: 395px;
-}
+  width: 395px; }
+
+.header__title {
+  display: flex; }
