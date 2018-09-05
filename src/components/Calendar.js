@@ -21,7 +21,7 @@ class Calendar extends React.Component {
           withCredentials: true,
           headers: {
             'Cache-Control': 'no-cache',
-            'Authorization': 'Bearer D6RFLhez9daKPzS9GbCWmVYosadjwWDXSTyQFseD6eLrJnCa',
+            'Authorization': ,
             'Content-Type': 'application/json'
           }
         }
