@@ -11,26 +11,26 @@ class Projects extends React.Component {
   }
   render() {
     return (
-      <div className="main__container">
+      <div className="projects__container">
        <Header title={this.texts.title} />
-        <div className="statistics__container">
-          <div className="statistics__data projects">
+        <div className="projects__statistics--container">
+          <div className="statistics__data projects__projects">
             <div className="data-number"><p>15</p></div>
             <div className="data-tags"><p>Proyectos activos</p></div>
           </div>
-          <div className="statistics__data tasks">
+          <div className="statistics__data projects__tasks">
             <div className="data-number"><p>1.750</p></div>
             <div className="data-tags"><p>tareas a completar</p></div>
           </div>
-          <div className="statistics__data weeks">
+          <div className="statistics__data projects__weeks">
             <div className="data-number"><p>205</p></div>
             <div className="data-tags"><p>completadas esta semana</p></div>
           </div>
-          <div className="statistics__data commits">
+          <div className="statistics__data projects__commits">
             <div className="data-number"><p>50</p></div>
             <div className="data-tags"><p>commits</p></div>
           </div>
-          <div className="statistics__data hours">
+          <div className="statistics__data projects__hours">
             <div className="data-number"><p>205.6</p></div>
             <div className="data-tags"><p>horas</p></div>
           </div>
