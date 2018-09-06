@@ -1,4 +1,3 @@
-
 $night-blue: #061135;
 $bright-light-blue: #3dcef0;
 $grey: #7f7f7f;
@@ -14,50 +13,52 @@ $dark-peach: #e37c61;
 $dark-sky-blue: #32a4e3;
 $light-green: #b8e986;
 
-
 // general
-$pagesbackground: $night-blue;
-$footernumber:$light-navy;
-$footerdetails: $dark-sky-blue;
+$pagesBackground: $night-blue;
+$footerNumber:$light-navy;
+$footerDetails: $dark-sky-blue;
 $titles:$white;
 $paragraph:$white;
-$nombers:$white;
+$numbers:$white;
 // calendar
-$selectedday:$bright-light-blue;
-$deadlinefinished: $grey;
-$deadlineunfinished: $vermillion;
-$deadlineclose: $golden;
-$futureevent:$light-blue;
-$futuredeadline:$light-blue;
-$eventdetail:$light-blue;
-$calendardaycontainer:$light-navy;
+$selectedDay:$bright-light-blue;
+$deadlineFinished: $grey;
+$deadlineUnfinished: $vermillion;
+$deadlineClose: $golden;
+$futureEvent:$light-blue;
+$futureDeadline:$light-blue;
+$eventDetail:$light-blue;
+$calendarDayContainer:$light-navy;
 // projects
-$statisticsdataprojects: $bright-light-blue;
-$statisticsdatatasks:$green;
-$statisticsdataweeks:$squash;
-$statisticsdatacommits:$water;
+$statisticsDataProjects: $bright-light-blue;
+$statisticsDataTasks:$green;
+$statisticsDataWeeks:$squash;
+$statisticsDataCommits:$water;
+$statisticsDataHours:$dark-peach;
+$chartBackground:$light-navy;
 // detailproject
-$statisticsdatatotalhours: $squash;
-$statisticsdataprogress:$bright-light-blue;
-$statisticsdatahoursperweek: $water;
-$statisticsdataprojectcommit: $dark-peach;
-$charttasks:$light-navy;
-$chartcontributors: $dark-sky-blue;
+$statisticsDataTotalHours: $squash;
+$statisticsDataProgress:$bright-light-blue;
+$statisticsDataHoursPerWeek: $water;
+$statisticsDataProjectCommit: $dark-peach;
+$chartTasks:$light-navy;
+$chartContributors: $dark-sky-blue;
 // team
-$averagecontainertasks: $bright-light-blue;
-$averagecontainercommits: $squash;
-$peoplecontainer:$light-navy;
+$averageContainerTasks: $bright-light-blue;
+$averageContainerCommits: $squash;
+$peopleContainer:$light-navy;
 // bar charts
-$chartfirstbar: $dark-sky-blue;
-$chartsecondbar: $golden;
-$chartthirdbar: $light-green;
-$chartfourthbar: $dark-peach;
-$chartfifthbar: $squash;
+$chartFirstBar: $dark-sky-blue;
+$chartSecondBar: $golden;
+$chartThirdBar: $light-green;
+$chartFourthBar: $dark-peach;
+$chartFifthBar: $squash;
 // dots charts
-$chartdotsfinished: $bright-light-blue;
-$chartdotsfinishedtext:$bright-light-blue;
-$chartdotsunfinished: $squash;
-$chartdotsunfinishedtext: $squash;
+$chartDotsFinished: $bright-light-blue;
+$chartDotsFinishedtext:$bright-light-blue;
+$chartDotsUnfinished: $squash;
+$chartDotsUnfinishedtext: $squash;
+
 //font-family
 $open: 'Open Sans', sans-serif;
 $montserrat: 'Montserrat', sans-serif;

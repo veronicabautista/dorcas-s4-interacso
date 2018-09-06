@@ -12,7 +12,7 @@
   padding-left: 32px;
   width: 1729px;
   grid-template-columns: 288px 1fr 230px;
-  background-color: $footerdetails;
+  background-color: $footerDetails;
 }
 
 .footer__notif-number {
@@ -20,7 +20,7 @@
   font-size: $normal;
   font-weight: $bold;
   letter-spacing: 2.1px;
-  background-color: $footernumber;
+  background-color: $footerNumber;
   display: flex;
   align-items: center;
   justify-content: center;
