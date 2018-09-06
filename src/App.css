@@ -1,18 +1,35 @@
-.footer__container {
+.header__container {
   display: flex;
-  color: #ffffff; }
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 3.4px;
+  margin-bottom: 35px;
+  height: 58px; }
 
-.footer__notif-details {
-  display: grid;
-  width: 1729px;
-  grid-template-columns: 288px 1fr 230px; }
+.header__title--which-dashboard {
+  margin: 0;
+  font-size: 48px; }
 
-.footer__notif-number {
-  width: 395px; }
+.header__title--which-project {
+  margin: 0;
+  font-size: 48px; }
 
-.header__title {
-  display: flex;
-  color: #ffffff; }
+.table__calendar {
+  border-collapse: collapse;
+  margin: 0 auto; }
+
+.table__calendartable, .calendar__day, .calendar__week {
+  border: 1px solid #17517f; }
+
+.calendar__day {
+  width: 345px;
+  height: 205px;
+  display: inline-block; }
+
+.callendar__day--number {
+  color: #ffffff;
+  vertical-align: top; }
 
 body {
   margin: 0;
@@ -187,3 +204,68 @@ body {
   margin: 0 auto;
   border-radius: 50%;
   margin-top: 38px; }
+
+.chart__project--completed-tasks {
+  width: 1035px;
+  height: 588px;
+  background-color: #17517f;
+  margin-right: 25px; }
+
+.chart__project--top-contributors {
+  width: 685px;
+  height: 588px;
+  background-color: #32a4e3; }
+
+.statistics__charts {
+  display: flex; }
+
+.footer__container {
+  display: flex;
+  margin-top: 30px;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  height: 70px; }
+
+.footer__notif-details {
+  display: grid;
+  align-items: center;
+  padding-left: 32px;
+  width: 1729px;
+  grid-template-columns: 288px 1fr 230px;
+  background-color: #32a4e3; }
+
+.footer__notif-number {
+  width: 395px;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2.1px;
+  background-color: #17517f;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.detail__notif-category {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.8px; }
+
+.detail__notif-content {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.8px; }
+
+.detail__notif-time {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.8px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin-top: 41px;
+  margin-bottom: 50px;
+  margin-left: 75px;
+  margin-right: 75px;
+  background-color: #061135; }
