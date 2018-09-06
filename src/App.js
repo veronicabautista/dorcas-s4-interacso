@@ -32,7 +32,7 @@ class App extends Component {
       const newSlide = this.state.currentDataboard * -100;
       this.setState({
         currentDataboard: this.state.currentDataboard + 1,
-        currentSlideLeft: `${newSlide}vw`
+        currentSlideLeft: `${newSlide}%`
       })
     }
   }
