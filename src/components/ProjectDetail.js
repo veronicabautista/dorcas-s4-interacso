@@ -3,10 +3,18 @@ import Header from './Header';
 import Notifications from './Notifications';
 
 class ProjectDetail extends React.Component {
+  constructor(props){
+    super(props)
+    this.texts = {
+      title: "Proyectos",
+      subtitle: "IKEA JD",
+      separator: " > "
+    }
+  }
   render(){
      return (
       <div className="detailedprojects__container">
-        <Header />
+        <Header title={this.texts.title} separator={this.texts.separator} subtitle={this.texts.subtitle}/>
         <div className="detailedprojects__content">
           <div className="statistics__container">
             <div className="statistics__data project__progress">

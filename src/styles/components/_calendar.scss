@@ -1,0 +1,16 @@
+.table__calendar {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+.table__calendartable, .calendar__day, .calendar__week {
+  border: 1px solid $calendardaycontainer;
+}
+.calendar__day {
+  width: 345px;
+  height: 205px;
+  display: inline-block;
+}
+.callendar__day--number {
+  color: $titles;
+  vertical-align: top;
+}

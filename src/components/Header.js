@@ -5,10 +5,11 @@ class Header extends React.Component {
     return (
       <div className="header__container">
         <h1 className="header__title--which-dashboard">
-           Proyectos
+          {this.props.title}
         </h1>
         <h1 className="header__title--which-project">
-          &nbsp;> IKEA DS
+          {this.props.separator} 
+          {this.props.subtitle}
         </h1>
       </div>
     );

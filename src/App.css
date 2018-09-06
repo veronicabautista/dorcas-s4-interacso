@@ -1,43 +1,3 @@
-.footer__container {
-  display: flex;
-  margin-top: 30px;
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  height: 70px; }
-
-.footer__notif-details {
-  display: grid;
-  align-items: center;
-  padding-left: 32px;
-  width: 1729px;
-  grid-template-columns: 288px 1fr 230px;
-  background-color: #32a4e3; }
-
-.footer__notif-number {
-  width: 395px;
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: 2.1px;
-  background-color: #17517f;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.detail__notif-category {
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: 1.8px; }
-
-.detail__notif-content {
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: 1.8px; }
-
-.detail__notif-time {
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 1.8px; }
-
 .header__container {
   display: flex;
   color: #ffffff;
@@ -54,6 +14,22 @@
 .header__title--which-project {
   margin: 0;
   font-size: 48px; }
+
+.table__calendar {
+  border-collapse: collapse;
+  margin: 0 auto; }
+
+.table__calendartable, .calendar__day, .calendar__week {
+  border: 1px solid #17517f; }
+
+.calendar__day {
+  width: 345px;
+  height: 205px;
+  display: inline-block; }
+
+.callendar__day--number {
+  color: #ffffff;
+  vertical-align: top; }
 
 body {
   margin: 0;
@@ -114,6 +90,46 @@ body {
 
 .statistics__charts {
   display: flex; }
+
+.footer__container {
+  display: flex;
+  margin-top: 30px;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  height: 70px; }
+
+.footer__notif-details {
+  display: grid;
+  align-items: center;
+  padding-left: 32px;
+  width: 1729px;
+  grid-template-columns: 288px 1fr 230px;
+  background-color: #32a4e3; }
+
+.footer__notif-number {
+  width: 395px;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2.1px;
+  background-color: #17517f;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.detail__notif-category {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.8px; }
+
+.detail__notif-content {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.8px; }
+
+.detail__notif-time {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.8px; }
 
 * {
   margin: 0;

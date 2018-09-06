@@ -1,8 +1,9 @@
 @import "styles/core/variables";
-@import "styles/layouts/notifications";
 @import "styles/layouts/header";
+@import "styles/components/calendar";
 @import "styles/components/projects";
 @import "styles/components/projectdetail";
+@import "styles/layouts/notifications";
 
 * {
   margin: 0;
