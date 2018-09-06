@@ -11,10 +11,10 @@ class Calendar extends React.Component {
   }
 render() {
   return (
-    <React.Fragment>
+    <div className="databoard">
       <Header title={this.texts.title}/>
       <Table apiService = {this.props.apiService}/>
-    </React.Fragment>
+    </div>
   );
 }
 }
