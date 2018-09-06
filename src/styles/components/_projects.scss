@@ -1,33 +1,26 @@
-.main__container {
+.projects__statistics--container{
   display: grid;
-  grid-template-columns: 1fr;
-  margin: auto;
-  font-family: $montserrat;
-}
-
-.statistics__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 260px 304px;
-  grid-template-rows: 134px;
+  grid-template-columns: 1fr 1fr 1fr 0.6fr 0.8fr;
+  grid-template-rows: auto;
   grid-gap: 27px;
 }
 
-.projects {
+.projects__projects {
   background-color: $statisticsDataProjects;
 }
 
-.tasks {
+.projects__tasks {
   background-color: $statisticsDataTasks;
 }
 
-.weeks {
+.projects__weeks {
   background-color: $statisticsDataWeeks;
 }
 
-.commits {
+.projects__commits {
   background-color: $statisticsDataCommits;
 }
-.hours {
+.projects__hours {
   background-color: $statisticsDataHours;
 }
 
@@ -51,7 +44,7 @@
 .statistics__chart {
   width: auto;
   height: 535px;
-  color: white;
+  color:$paragraph;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;

@@ -16,7 +16,7 @@ class ProjectDetail extends React.Component {
       <div className="detailedprojects__container databoard">
         <Header title={this.texts.title} separator={this.texts.separator} subtitle={this.texts.subtitle}/>
         <div className="detailedprojects__content">
-          <div className="statistics__container">
+          <div className="detailedprojects__statistics--container">
             <div className="statistics__data project__progress">
               <div className="project-progress__percentage">
                 <div className="data-number"><p>55%</p></div>
@@ -44,6 +44,18 @@ class ProjectDetail extends React.Component {
 
             </div>
             <div className="chart__project--top-contributors">
+              <div className="top-contributors__chart">
+                <p className="top-contributors__title">Top contributors</p>
+                <ul className="top-contributors__list">
+                  <li className="top-contributors__list--element">#1</li>
+                  <li className="top-contributors__list--element">#2</li>
+                  <li className="top-contributors__list--element">#3</li>
+                  <li className="top-contributors__list--element">#4</li>
+                  <li className="top-contributors__list--element">#5</li>
+                  <li className="top-contributors__list--element">#6</li>
+                </ul>
+
+              </div>
 
             </div>
           </div>

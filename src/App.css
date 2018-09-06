@@ -47,31 +47,25 @@
   color: #ffffff;
   vertical-align: top; }
 
-.main__container {
+.projects__statistics--container {
   display: grid;
-  grid-template-columns: 1fr;
-  margin: auto;
-  font-family: "Montserrat", sans-serif; }
-
-.statistics__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 260px 304px;
-  grid-template-rows: 134px;
+  grid-template-columns: 1fr 1fr 1fr 0.6fr 0.8fr;
+  grid-template-rows: auto;
   grid-gap: 27px; }
 
-.projects {
+.projects__projects {
   background-color: #3dcef0; }
 
-.tasks {
+.projects__tasks {
   background-color: #7ed321; }
 
-.weeks {
+.projects__weeks {
   background-color: #f5a623; }
 
-.commits {
+.projects__commits {
   background-color: #4a90e2; }
 
-.hours {
+.projects__hours {
   background-color: #e37c61; }
 
 .data-number {
@@ -91,7 +85,7 @@
 .statistics__chart {
   width: auto;
   height: 535px;
-  color: white;
+  color: #ffffff;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -118,7 +112,10 @@
   height: 100vh; }
 
 .dashborad {
-  background-color: grey; }
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
 
 .main__container-team {
   height: auto;
@@ -160,7 +157,8 @@
   background-color: #f5a623;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
-  padding: 20px 50px 24px 50px; }
+  padding: 20px 50px 24px 50px;
+  margin-left: 60px; }
 
 .commits-number {
   font-weight: 600;
@@ -180,7 +178,8 @@
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: 900;
-  padding: 20px 50px 24px 50px; }
+  padding: 20px 50px 24px 50px;
+  margin-left: 60px; }
 
 .tasks-number {
   font-weight: 600;
@@ -199,7 +198,8 @@
   color: #ffffff;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  padding: 30px 0 30px 0; }
+  padding: 30px 0 30px 0;
+  margin-left: 60px; }
 
 .asana-title {
   font-size: 30px;
@@ -213,7 +213,8 @@
   color: #ffffff;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  padding: 30px 0 30px 0; }
+  padding: 30px 0 30px 0;
+  margin-left: 60px; }
 
 .git-title {
   font-size: 30px;
@@ -229,8 +230,10 @@
   font-weight: 600; }
 
 .killer-detail {
+  max-width: 250px;
   font-size: 25px;
-  font-weight: 400; }
+  font-weight: 400;
+  margin: 0 auto; }
 
 .profile-pic {
   width: 119px;
@@ -242,22 +245,91 @@
   border-radius: 50%;
   margin-top: 38px; }
 
+.tasks-pic {
+  width: 832px;
+  height: 397px;
+  background-image: url("./images/tasks.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  margin-top: 18px; }
+
+.commits-pic {
+  width: 832px;
+  height: 397px;
+  background-image: url("./images/commits.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  margin-top: 18px; }
+
+.project__progress {
+  background-color: #3dcef0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.project__hours {
+  background-color: #f5a623; }
+
+.project__hours--week {
+  background-color: #4a90e2; }
+
+.project__commits {
+  background-color: #e37c61; }
+
+.progress__integer--completed {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500; }
+
+.detailedprojects__statistics--container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.6fr 0.8fr;
+  grid-template-rows: 134px;
+  grid-gap: 27px;
+  margin-bottom: 36px; }
+
+.statistics__charts {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr; }
+
+.top-contributors__chart {
+  margin: 31px; }
+
 .chart__project--completed-tasks {
-  width: 1035px;
   height: 588px;
   background-color: #17517f;
   margin-right: 25px; }
 
 .chart__project--top-contributors {
-  width: 685px;
   height: 588px;
   background-color: #32a4e3; }
 
-.statistics__charts {
-  display: flex; }
+.top-contributors__title {
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: 2.1px;
+  color: #ffffff; }
+
+.top-contributors__list {
+  margin-top: 22px;
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: 2.1px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  list-style: none; }
+
+.top-contributors__list--element {
+  padding: 15.5px;
+  border-bottom: 1px solid #17517f; }
 
 .footer__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.22fr 0.78fr;
   margin-top: 30px;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
@@ -265,14 +337,15 @@
 
 .footer__notif-details {
   display: grid;
+  grid-template-columns: 0.22fr 0.56fr 0.22fr;
   align-items: center;
   padding-left: 32px;
-  width: 1729px;
-  grid-template-columns: 288px 1fr 230px;
   background-color: #32a4e3; }
 
+.footer__bell {
+  text-align: center; }
+
 .footer__notif-number {
-  width: 395px;
   font-size: 25px;
   font-weight: 900;
   letter-spacing: 2.1px;
@@ -282,9 +355,13 @@
   justify-content: center; }
 
 .detail__notif-category {
+  display: flex;
   font-size: 25px;
   font-weight: 600;
   letter-spacing: 1.8px; }
+
+.detail__notif-type {
+  margin-left: 3px; }
 
 .detail__notif-content {
   font-size: 25px;
@@ -305,4 +382,5 @@ body {
   margin-bottom: 50px;
   margin-left: 75px;
   margin-right: 75px;
-  background-color: #061135; }
+  background-color: #061135;
+  font-family: "Montserrat", sans-serif; }
