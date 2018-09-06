@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Projects from './components/Projects';
-import './App.css';
 import Calendar from './components/Calendar';
-
+import Projects from './components/Projects';
+import ProjectDetail from './components/ProjectDetail';
+import './App.css';
 class App extends Component {
   constructor(props){
     super(props);
@@ -15,6 +13,7 @@ class App extends Component {
       <div className="App">
         <Calendar apiService = {this.apiService}/>
         <Projects />
+        <ProjectDetail />
       </div>
     );
   }

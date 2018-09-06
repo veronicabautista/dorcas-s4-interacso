@@ -1,13 +1,12 @@
 import React from 'react';
 import Env from '../data/.env.json';
 import Header from './Header';
-import Footer from './Footer';
 
 class Calendar extends React.Component {
   constructor(props){
     super(props)
     this.texts = {
-      title: "Calendar"
+      title: "Calendario"
     }
     this.state = {
       calendarNotifications: []

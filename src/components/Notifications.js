@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Footer extends React.Component {
+class Notifications extends React.Component {
   render(){
      return (
       <div className="footer__container">
@@ -15,4 +15,4 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+export default Notifications;
