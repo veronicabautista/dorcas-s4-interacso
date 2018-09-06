@@ -20,7 +20,6 @@
   grid-row: 1 / 7;
   background-color: rgba(23, 81, 127, 0.6);
   padding: 40px 25px 30px 25px;
-  margin-left: 15px;
 }
 .tasks-title {
   color: $titles;
@@ -34,7 +33,6 @@
   grid-row: 7 / 13 ;
   background-color: rgba(23, 81, 127, 0.6);
   padding: 40px 25px 30px 25px;
-  margin-left: 15px;
 }
 .commits-title{
   color: $titles;
@@ -91,7 +89,7 @@
   text-align: center;
   font-family: $montserrat;
   padding: 30px 0 30px 0;
-  margin-left: 69px;
+  margin-left: 60px;
 }
 .asana-title{
   font-size: $large;
@@ -107,7 +105,6 @@
   font-family: $montserrat;
   padding: 30px 0 30px 0;
   margin-left: 60px;
-  margin-right: 9px;
 }
 .git-title{
   font-size: $large;
@@ -123,8 +120,10 @@ font-weight: $bold;
   font-weight: $semibold;
 }
 .killer-detail{
+  max-width: 250px;
   font-size: $normal;
   font-weight: $regular;
+  margin: 0 auto;
 }
 .profile-pic{
   width: 119px;

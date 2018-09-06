@@ -1,5 +1,6 @@
 .footer__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.22fr 0.78fr;
   margin-top: 30px;
   color: $titles;
   font-family: $montserrat;
@@ -8,15 +9,17 @@
 
 .footer__notif-details {
   display: grid;
+  grid-template-columns: 0.22fr 0.56fr 0.22fr;
   align-items: center;
   padding-left: 32px;
-  width: 1729px;
-  grid-template-columns: 288px 1fr 230px;
   background-color: $footerDetails;
 }
 
+.footer__bell{
+  text-align: center;
+}
+
 .footer__notif-number {
-  width: 395px;
   font-size: $normal;
   font-weight: $bold;
   letter-spacing: 2.1px;
@@ -27,9 +30,14 @@
 }
 
 .detail__notif-category {
+  display: flex;
   font-size: $normal;
   font-weight: $semibold;
   letter-spacing: 1.8px;
+}
+
+.detail__notif-type{
+  margin-left: 3px;
 }
 
 .detail__notif-content {
