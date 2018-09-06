@@ -31,21 +31,26 @@
   margin: 0;
   font-size: 48px; }
 
-.table__calendar {
-  border-collapse: collapse;
+.calendar__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #ffffff;
+  min-height: 80%;
   margin: 0 auto; }
 
-.table__calendartable, .calendar__day, .calendar__week {
-  border: 1px solid #17517f; }
+.day__container {
+  background-color: #17517f; }
+  .day__container.withEvent {
+    border-bottom: solid 10px #31cef2; }
 
-.calendar__day {
-  width: 345px;
-  height: 205px;
-  display: inline-block; }
-
-.callendar__day--number {
-  color: #ffffff;
-  vertical-align: top; }
+.day__notifications {
+  font-size: 25px;
+  color: #31cef2; }
 
 .projects__statistics--container {
   display: grid;
@@ -384,3 +389,6 @@ body {
   margin-right: 75px;
   background-color: #061135;
   font-family: "Montserrat", sans-serif; }
+
+.App {
+  width: 100%; }
