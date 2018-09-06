@@ -18,7 +18,10 @@
   font-size: 25px;
   font-weight: 900;
   letter-spacing: 2.1px;
-  background-color: #17517f; }
+  background-color: #17517f;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .detail__notif-category {
   font-size: 25px;
@@ -39,16 +42,18 @@
   display: flex;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
-  font-size: 48px;
   font-weight: 900;
   letter-spacing: 3.4px;
-  margin-bottom: 35px; }
+  margin-bottom: 35px;
+  height: 58px; }
 
 .header__title--which-dashboard {
-  margin: 0; }
+  margin: 0;
+  font-size: 48px; }
 
 .header__title--which-project {
-  margin: 0; }
+  margin: 0;
+  font-size: 48px; }
 
 body {
   margin: 0;
@@ -109,3 +114,14 @@ body {
 
 .statistics__charts {
   display: flex; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin-top: 41px;
+  margin-bottom: 50px;
+  margin-left: 75px;
+  margin-right: 75px;
+  background-color: #061135; }

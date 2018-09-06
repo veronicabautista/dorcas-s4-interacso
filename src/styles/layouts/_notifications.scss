@@ -21,6 +21,9 @@
   font-weight: $bold;
   letter-spacing: 2.1px;
   background-color: $footernumber;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .detail__notif-category {
