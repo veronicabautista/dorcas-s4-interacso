@@ -23,8 +23,8 @@
   border: 1px solid #17517f; }
 
 .calendar__day {
-  width: 350px;
-  height: 210px;
+  width: 345px;
+  height: 205px;
   display: inline-block; }
 
 .callendar__day--number {
