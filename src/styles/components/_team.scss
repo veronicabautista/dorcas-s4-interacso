@@ -3,6 +3,9 @@
 }
 .dashborad {
   background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .main__container-team {
   height: auto;
@@ -17,6 +20,7 @@
   grid-row: 1 / 7;
   background-color: rgba(23, 81, 127, 0.6);
   padding: 40px 25px 30px 25px;
+  margin-left: 15px;
 }
 .tasks-title {
   color: $titles;
@@ -30,6 +34,7 @@
   grid-row: 7 / 13 ;
   background-color: rgba(23, 81, 127, 0.6);
   padding: 40px 25px 30px 25px;
+  margin-left: 15px;
 }
 .commits-title{
   color: $titles;
@@ -45,6 +50,7 @@
   color: $titles;
   font-family: $montserrat;
   padding: 20px 50px 24px 50px;
+  margin-left: 60px;
 }
 .commits-number{
   font-weight: $semibold;
@@ -65,6 +71,7 @@
   font-size: $large;
   font-weight: $bold;
   padding: 20px 50px 24px 50px;
+  margin-left: 60px;
 }
 .tasks-number{
   font-weight: $semibold;
@@ -84,6 +91,7 @@
   text-align: center;
   font-family: $montserrat;
   padding: 30px 0 30px 0;
+  margin-left: 69px;
 }
 .asana-title{
   font-size: $large;
@@ -98,6 +106,8 @@
   text-align: center;
   font-family: $montserrat;
   padding: 30px 0 30px 0;
+  margin-left: 60px;
+  margin-right: 9px;
 }
 .git-title{
   font-size: $large;
@@ -125,4 +135,22 @@ font-weight: $bold;
   margin: 0 auto;
   border-radius: 50%;
   margin-top: 38px;
+}
+.tasks-pic{
+  width: 832px;
+  height: 397px;
+  background-image: url('./images/tasks.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  margin-top: 18px;
+}
+.commits-pic {
+  width: 832px;
+  height: 397px;
+  background-image: url('./images/commits.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  margin-top: 18px;
 }
