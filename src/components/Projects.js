@@ -11,7 +11,7 @@ class Projects extends React.Component {
   }
   render() {
     return (
-      <div className="main__container">
+      <div className="main__container databoard">
        <Header title={this.texts.title} />
         <div className="statistics__container">
           <div className="statistics__data projects">

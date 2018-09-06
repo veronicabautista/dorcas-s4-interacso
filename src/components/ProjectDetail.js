@@ -13,7 +13,7 @@ class ProjectDetail extends React.Component {
   }
   render(){
      return (
-      <div className="detailedprojects__container">
+      <div className="detailedprojects__container databoard">
         <Header title={this.texts.title} separator={this.texts.separator} subtitle={this.texts.subtitle}/>
         <div className="detailedprojects__content">
           <div className="statistics__container">

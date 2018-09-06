@@ -1,10 +1,13 @@
 @import "styles/core/variables";
+@import "styles/core/mixings";
 @import "styles/layouts/header";
 @import "styles/components/calendar";
 @import "styles/components/projects";
 @import "styles/components/team";
 @import "styles/components/projectdetail";
 @import "styles/layouts/notifications";
+
+
 
 * {
   margin: 0;
