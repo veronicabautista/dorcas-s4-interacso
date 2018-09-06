@@ -1,95 +1,78 @@
-body {
-  margin: 0;
-  padding: 0;
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto;
+  font-family: $montserrat;
 }
-p {
-  margin: 0;
-  padding: 0;
+
+.statistics__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 260px 304px;
+  grid-template-rows: 134px;
+  grid-gap: 27px;
 }
-  
-  .App {
-    margin: 0;
-    padding: 75px 50px 75px 41px;
-    background-color: $pagesBackground;
-    font-family: $montserrat;
-  }
-  
-  .main__container {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: auto;
-  } 
-  
-  .statistics__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 260px 304px;
-    grid-template-rows: 134px;
-    grid-gap: 27px;
-  }
-  
-  .projects {
-    background-color: $statisticsDataProjects;
-  }
 
-  .tasks {
-    background-color: $statisticsDataTasks;
-  }
+.projects {
+  background-color: $statisticsDataProjects;
+}
 
-  .weeks {
-    background-color: $statisticsDataWeeks;
-  }
+.tasks {
+  background-color: $statisticsDataTasks;
+}
 
-  .commits {
-    background-color: $statisticsDataCommits;
-  }
-  .hours {
-    background-color: $statisticsDataHours;
-  }
+.weeks {
+  background-color: $statisticsDataWeeks;
+}
 
-  .data-number {
-    color: $numbers;
-    font-size: $xxx_large;
-    font-weight: $semibold;
-    margin: 0;
-  }
+.commits {
+  background-color: $statisticsDataCommits;
+}
+.hours {
+  background-color: $statisticsDataHours;
+}
 
-  .data-tags {
-    color: $paragraph;
-    font-size: $normal;
-    font-weight: $medium;
-  }
-  
-  .statistics__data {
-    padding: 20px;
-  } 
+.data-number {
+  color: $numbers;
+  font-size: $xxx_large;
+  font-weight: $semibold;
+  margin: 0;
+}
 
+.data-tags {
+  color: $paragraph;
+  font-size: $normal;
+  font-weight: $medium;
+}
 
-  .statistics__chart {
-    width: auto;
-    height: 535px;
-    color: white;
-    display: grid;
-    grid-template-columns:  repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-gap: 90px;
-    margin-top: 70px;
+.statistics__data {
+  padding: 20px;
+}
 
-  }
-  
-  .chart-commits {
-    background-color: $chartBackground;
-    padding-top: 50px;
-    font-family: $montserrat;
-    font-weight: $bold;
-    font-size: $large;
-    padding-left: 30px;
-  }
-  
-  .chart-hours {
-    background-color: $chartBackground;
-    padding-top: 50px;
-    font-family: $montserrat;
-    font-weight: $bold;
-    font-size: $large;
-    padding-left: 30px;
-  }
+.statistics__chart {
+  width: auto;
+  height: 535px;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 90px;
+  margin-top: 70px;
+}
+
+.chart-commits {
+  background-color: $chartBackground;
+  padding-top: 50px;
+  font-family: $montserrat;
+  font-weight: $bold;
+  font-size: $large;
+  padding-left: 30px;
+}
+
+.chart-hours {
+  background-color: $chartBackground;
+  padding-top: 50px;
+  font-family: $montserrat;
+  font-weight: $bold;
+  font-size: $large;
+  padding-left: 30px;
+}

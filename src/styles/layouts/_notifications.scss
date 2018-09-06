@@ -1,0 +1,45 @@
+.footer__container {
+  display: flex;
+  margin-top: 30px;
+  color: $titles;
+  font-family: $montserrat;
+  height: 70px;
+}
+
+.footer__notif-details {
+  display: grid;
+  align-items: center;
+  padding-left: 32px;
+  width: 1729px;
+  grid-template-columns: 288px 1fr 230px;
+  background-color: $footerDetails;
+}
+
+.footer__notif-number {
+  width: 395px;
+  font-size: $normal;
+  font-weight: $bold;
+  letter-spacing: 2.1px;
+  background-color: $footerNumber;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail__notif-category {
+  font-size: $normal;
+  font-weight: $semibold;
+  letter-spacing: 1.8px;
+}
+
+.detail__notif-content {
+  font-size: $normal;
+  font-weight: $semibold;
+  letter-spacing: 1.8px;
+}
+
+.detail__notif-time {
+  font-size: $small;
+  font-weight: $regular;
+  letter-spacing: 1.8px;
+}

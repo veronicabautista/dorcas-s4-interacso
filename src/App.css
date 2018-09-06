@@ -1,37 +1,41 @@
-.footer__container {
+.header__container {
   display: flex;
-  color: #ffffff; }
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 3.4px;
+  margin-bottom: 35px;
+  height: 58px; }
 
-.footer__notif-details {
-  display: grid;
-  width: 1729px;
-  grid-template-columns: 288px 1fr 230px; }
-
-.footer__notif-number {
-  width: 395px; }
-
-.header__title {
-  display: flex;
-  color: #ffffff; }
-
-body {
+.header__title--which-dashboard {
   margin: 0;
-  padding: 0; }
+  font-size: 48px; }
 
-p {
+.header__title--which-project {
   margin: 0;
-  padding: 0; }
+  font-size: 48px; }
 
-.App {
-  margin: 0;
-  padding: 75px 50px 75px 41px;
-  background-color: #061135;
-  font-family: "Montserrat", sans-serif; }
+.table__calendar {
+  border-collapse: collapse;
+  margin: 0 auto; }
+
+.table__calendartable, .calendar__day, .calendar__week {
+  border: 1px solid #17517f; }
+
+.calendar__day {
+  width: 345px;
+  height: 205px;
+  display: inline-block; }
+
+.callendar__day--number {
+  color: #ffffff;
+  vertical-align: top; }
 
 .main__container {
   display: grid;
   grid-template-columns: 1fr;
-  margin: auto; }
+  margin: auto;
+  font-family: "Montserrat", sans-serif; }
 
 .statistics__container {
   display: grid;
@@ -93,3 +97,196 @@ p {
   font-weight: 900;
   font-size: 30px;
   padding-left: 30px; }
+
+.team__container {
+  height: 100vh; }
+
+.dashborad {
+  background-color: grey; }
+
+.main__container-team {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50px;
+  grid-gap: 20px;
+  background-color: #061135; }
+
+.chart__tasks {
+  grid-column: 1 / 3;
+  grid-row: 1 / 7;
+  background-color: rgba(23, 81, 127, 0.6);
+  padding: 40px 25px 30px 25px; }
+
+.tasks-title {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0; }
+
+.chart__commits {
+  grid-column: 1 / 3;
+  grid-row: 7 / 13;
+  background-color: rgba(23, 81, 127, 0.6);
+  padding: 40px 25px 30px 25px; }
+
+.commits-title {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0; }
+
+.average__container-commits {
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+  background-color: #f5a623;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px 50px 24px 50px; }
+
+.commits-number {
+  font-weight: 600;
+  font-size: 50px;
+  margin: 0; }
+
+.commits-text {
+  font-weight: 500;
+  font-size: 25px;
+  margin: 0; }
+
+.average__container-tasks {
+  grid-column: 3 / 5;
+  grid-row: 3 / 5;
+  background-color: #3dcef0;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  padding: 20px 50px 24px 50px; }
+
+.tasks-number {
+  font-weight: 600;
+  font-size: 50px;
+  margin: 0; }
+
+.tasks-text {
+  font-weight: 500;
+  font-size: 25px;
+  margin: 0; }
+
+.people__container-asana {
+  grid-column: 3;
+  grid-row: 5/ 13;
+  background-color: #17517f;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  padding: 30px 0 30px 0; }
+
+.asana-title {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0; }
+
+.people__container-git {
+  grid-column: 4;
+  grid-row: 5 / 13;
+  background-color: #17517f;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  padding: 30px 0 30px 0; }
+
+.git-title {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0; }
+
+.killer-name {
+  font-size: 25px;
+  font-weight: 900; }
+
+.killer-record {
+  font-size: 45px;
+  font-weight: 600; }
+
+.killer-detail {
+  font-size: 25px;
+  font-weight: 400; }
+
+.profile-pic {
+  width: 119px;
+  height: 119px;
+  background-image: url("./images/test-pic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: 38px; }
+
+.chart__project--completed-tasks {
+  width: 1035px;
+  height: 588px;
+  background-color: #17517f;
+  margin-right: 25px; }
+
+.chart__project--top-contributors {
+  width: 685px;
+  height: 588px;
+  background-color: #32a4e3; }
+
+.statistics__charts {
+  display: flex; }
+
+.footer__container {
+  display: flex;
+  margin-top: 30px;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  height: 70px; }
+
+.footer__notif-details {
+  display: grid;
+  align-items: center;
+  padding-left: 32px;
+  width: 1729px;
+  grid-template-columns: 288px 1fr 230px;
+  background-color: #32a4e3; }
+
+.footer__notif-number {
+  width: 395px;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2.1px;
+  background-color: #17517f;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.detail__notif-category {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.8px; }
+
+.detail__notif-content {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.8px; }
+
+.detail__notif-time {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.8px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin-top: 41px;
+  margin-bottom: 50px;
+  margin-left: 75px;
+  margin-right: 75px;
+  background-color: #061135; }

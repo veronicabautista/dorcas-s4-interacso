@@ -1,4 +1,20 @@
 @import "styles/core/variables";
-@import "styles/layouts/footer";
 @import "styles/layouts/header";
+@import "styles/components/calendar";
 @import "styles/components/projects";
+@import "styles/components/team";
+@import "styles/components/projectdetail";
+@import "styles/layouts/notifications";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin-top: 41px;
+  margin-bottom: 50px;
+  margin-left: 75px;
+  margin-right: 75px;
+  background-color: $pagesBackground;
+}

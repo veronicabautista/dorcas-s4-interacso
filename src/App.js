@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
+import Calendar from './components/Calendar';
 import Projects from './components/Projects';
-import Footer from './components/Footer';
+import ProjectDetail from './components/ProjectDetail';
+import Team from './components/Team';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.apiService = 'https://databoards-api.interacso.com/';
+  }
   render() {
     return (
       <div className="App">
-        <Projects />    
+        <Calendar apiService = {this.apiService}/>
+        <Projects />
+        <ProjectDetail />
+        <Team />
       </div>
     );
   }
