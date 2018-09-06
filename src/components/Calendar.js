@@ -66,6 +66,7 @@ incrementDaysInMiliseconds(date, numDays) {
 }
 searchNotificationsByDate(date) {
   let dateFormatted = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
+  console.log(dateFormatted);
 }
 calculateStartDate() {
   let today = new Date();
