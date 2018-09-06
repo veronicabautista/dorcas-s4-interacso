@@ -80,10 +80,10 @@ render() {
   console.log(Env.token);
   console.log('hola estoy funcionando')
   return (
-    <React.Fragment>
+    <div className="databoard">
       <Header title={this.texts.title}/>
       {this.makeCalendarStructure()}
-    </React.Fragment>
+    </div>
   );
 }
 }

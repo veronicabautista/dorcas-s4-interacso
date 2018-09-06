@@ -12,7 +12,7 @@ class Team extends React.Component {
   }
   render() {
     return (
-      <div className="team__container">
+      <div className="team__container databoard">
         <Header title={this.texts.title} />
         <div className="main__container-team">
           <div className="dashborad chart__tasks"><p className="tasks-title">Tareas Semana</p><div className="tasks-pic"></div></div>

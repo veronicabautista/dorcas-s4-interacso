@@ -1,0 +1,18 @@
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.visor {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  left: 0;
+}
+
+.databoard {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  overflow-x: hidden;
+}
