@@ -1,18 +1,59 @@
 .footer__container {
   display: flex;
-  color: #ffffff; }
+  margin-top: 30px;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  height: 70px; }
 
 .footer__notif-details {
   display: grid;
+  align-items: center;
+  padding-left: 32px;
   width: 1729px;
-  grid-template-columns: 288px 1fr 230px; }
+  grid-template-columns: 288px 1fr 230px;
+  background-color: #32a4e3; }
 
 .footer__notif-number {
-  width: 395px; }
-
-.header__title {
+  width: 395px;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2.1px;
+  background-color: #17517f;
   display: flex;
-  color: #ffffff; }
+  align-items: center;
+  justify-content: center; }
+
+.detail__notif-category {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.8px; }
+
+.detail__notif-content {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.8px; }
+
+.detail__notif-time {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.8px; }
+
+.header__container {
+  display: flex;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 3.4px;
+  margin-bottom: 35px;
+  height: 58px; }
+
+.header__title--which-dashboard {
+  margin: 0;
+  font-size: 48px; }
+
+.header__title--which-project {
+  margin: 0;
+  font-size: 48px; }
 
 body {
   margin: 0;
@@ -59,3 +100,28 @@ body {
 .chart-hours {
   background-color: rgba(23, 81, 127, 0.6);
   padding: 40px; }
+
+.chart__project--completed-tasks {
+  width: 1035px;
+  height: 588px;
+  background-color: #17517f;
+  margin-right: 25px; }
+
+.chart__project--top-contributors {
+  width: 685px;
+  height: 588px;
+  background-color: #32a4e3; }
+
+.statistics__charts {
+  display: flex; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin-top: 41px;
+  margin-bottom: 50px;
+  margin-left: 75px;
+  margin-right: 75px;
+  background-color: #061135; }
