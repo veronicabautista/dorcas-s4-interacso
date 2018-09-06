@@ -1,16 +1,28 @@
-.table__calendar {
-  border-collapse: collapse;
+.calendar__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2px;
+  font-family: $montserrat;
+  font-size: $xx_large;
+  font-weight: $bold;
+  color: $numbers;
+  min-height: 80%;
   margin: 0 auto;
 }
-.table__calendartable, .calendar__day, .calendar__week {
-  border: 1px solid $calendarDayContainer;
+.day__container {
+  background-color: $calendarDayContainer;
+  &.withEvent {
+    border-bottom: solid 10px $eventDetail;
+  }
 }
-.calendar__day {
-  width: 345px;
-  height: 205px;
-  display: inline-block;
+.day__notifications {
+  font-size: $normal;
+  color: $futureEvent;
 }
-.callendar__day--number {
-  color: $titles;
-  vertical-align: top;
+.day__notifications-event {
+
+}
+.day__notifications-deadline {
+
 }
