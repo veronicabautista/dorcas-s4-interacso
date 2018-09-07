@@ -1,7 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
 Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+## Password
+
+In this project it is necessary to include a folder named data in src folder wich  includes a file named .env.json. This file contains a object with key: value. key= "token"
+value = "bearer"+ "_token"
 
 ## Table of Contents
 
