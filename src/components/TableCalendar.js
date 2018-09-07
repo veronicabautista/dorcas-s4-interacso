@@ -20,7 +20,7 @@ class Table extends React.Component {
         dayContainerClass += ' withEvent';
       }
       datesInHTML.push(
-        <div className = {dayContainerClass}>
+        <div className = {dayContainerClass} key={dateToPrint.label}>
           <div className = "day__label">{dateToPrint.label}</div>
           <div className = "day__notifications">
             <div className = "day__notifications-event">{dateToPrint.event}</div>
@@ -67,6 +67,7 @@ class Table extends React.Component {
       return date.getFullYear() + '-' + month + '-' + day;
     }
     getCalendarNotifications() {
+      console.log(Env.token);
       if(Env.token !== "undefined"){
       fetch(
         this.props.apiService + 'calendar',
