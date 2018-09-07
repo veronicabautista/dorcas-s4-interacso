@@ -3,7 +3,7 @@ Below you will find some information on how to perform common tasks.<br>
 ## Password
 
 In this project it is necessary to include a folder named data in src folder wich  includes a file named .env.json. This file contains a object with key: value. key= "token"
-value = "bearer"+ "_token"
+value = "bearer"+ "*token*"
 
 ## Table of Contents
 
