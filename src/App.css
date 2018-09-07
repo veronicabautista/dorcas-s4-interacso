@@ -44,7 +44,8 @@
   margin: 0 auto; }
 
 .day__container {
-  background-color: #17517f; }
+  background-color: #17517f;
+  min-height: 15vh; }
   .day__container.withEvent {
     border-bottom: solid 10px #31cef2; }
 

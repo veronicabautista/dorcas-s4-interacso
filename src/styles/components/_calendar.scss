@@ -12,6 +12,7 @@
 }
 .day__container {
   background-color: $calendarDayContainer;
+  min-height: 15vh;
   &.withEvent {
     border-bottom: solid 10px $eventDetail;
   }
