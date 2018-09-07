@@ -12,7 +12,7 @@ class Table extends React.Component {
   componentDidMount() {
     this.getCalendarNotifications();
   }
-  makeCalendarStructure() {
+  getCalendarNotifications() {
   let datesInHTML = [];
   this.state.datesToPrint.forEach(dateToPrint => {
     let dayContainerClass = 'day__container';
@@ -67,6 +67,8 @@ getCalendarDates() {
     return date.getFullYear() + '-' + month + '-' + day;
   }
   getCalendarNotifications() {
+    if (Env.token !== undefined){
+      this.getCalendarNotifications();
     fetch(
       this.props.apiService + 'calendar',
       {
@@ -84,6 +86,9 @@ getCalendarDates() {
   ).then(json => {
     this.setDatesNotifications(json.data);
   });
+} else {
+  alert("No esta autorizado para la muestra de datos");
+  }
 }
 setDatesNotifications(json){
   let datesToPrint = this.state.datesToPrint;
@@ -121,10 +126,10 @@ calculateStartDate() {
 render() {
   return (
     <React.Fragment>
-      {this.makeCalendarStructure()}
+      {this.getCalendarNotifications()}
     </React.Fragment>
-  );
-}
+    );
+  }
 }
 
 export default Table;
