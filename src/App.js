@@ -45,7 +45,7 @@ class App extends Component {
     return (
       <div className="visor" style={sliderStyles}>
         <Calendar apiService = {this.apiService}/>
-        <Projects />
+        <Projects apiService = {this.apiService}/>
         <ProjectDetail />
         <Team />
       </div>
