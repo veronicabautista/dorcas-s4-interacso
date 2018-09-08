@@ -68,27 +68,34 @@ class Table extends React.Component {
     }
     getCalendarNotifications() {
       console.log(Env.token);
-      if(Env.token !== "undefined"){
-      fetch(
-        this.props.apiService + 'calendar',
-        {
-          method: 'get',
-          withCredentials: true,
-          headers: {
-            'Cache-Control': 'no-cache',
-            'Authorization': Env.token,
-            'Content-Type': 'application/json'
+      if(typeof Env !== "undefined" & Env.token !== "undefined") {
+        fetch(
+          this.props.apiService + 'calendar',
+          {
+            method: 'get',
+            withCredentials: true,
+            headers: {
+              'Cache-Control': 'no-cache',
+              'Authorization': Env.token,
+              'Content-Type': 'application/json'
+            }
+          }
+        ).then(response => {
+          if(response.status === 401){
+            throw Error(response.statusText);
+          } else {
+            return response.json();
           }
         }
-      ).then(response => {
-        return response.json();
-      }
-    ).then(json => {
-      this.setDatesNotifications(json.data);
-    });
-  } else {
-    alert("No esta usted autorizado para la muestra de datos");
-  }
+      ).then(json => {
+        this.setDatesNotifications(json.data);
+      }).catch(error => {
+        alert("El token es incorrecto");
+        console.error(error);
+      });
+    } else {
+      alert("No esta usted autorizado");
+    }
   }
   setDatesNotifications(json){
     let datesToPrint = this.state.datesToPrint;
