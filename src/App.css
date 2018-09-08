@@ -269,6 +269,15 @@
   margin: 0 auto;
   margin-top: 18px; }
 
+.team_member_photo {
+  border-top: 2px solid white; }
+  .team_member_photo img {
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+    margin-right: 44px; }
+
 .project__progress {
   background-color: #3dcef0;
   display: flex;

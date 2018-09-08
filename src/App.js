@@ -4,6 +4,8 @@ import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Team from './components/Team';
 import './App.css';
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.compact.css';
 
 class App extends Component {
   constructor(props){
@@ -12,14 +14,14 @@ class App extends Component {
     this.state = {
       currentDataboard: 0,
       currentTransition: "0.5s",
-      currentSlideLeft: "0",
+      currentSlideLeft: "-300%",
       totalDataboards: 4
     }
     this.showNextDashboard = this.showNextDashboard.bind(this)
   }
 
   componentDidMount() {
-    this.effect = setInterval(this.showNextDashboard, 3000);
+    this.effect = setInterval(this.showNextDashboard, 30000000);
   }
 
   showNextDashboard(){
@@ -47,7 +49,7 @@ class App extends Component {
         <Calendar apiService = {this.apiService}/>
         <Projects />
         <ProjectDetail />
-        <Team />
+        <Team apiService = {this.apiService}/>
       </div>
     );
   }

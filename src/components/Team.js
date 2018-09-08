@@ -1,6 +1,8 @@
 import React from "react";
 import Header from './Header';
+import WeekTasksChart from './WeekTasksChart';
 import Notifications from './Notifications';
+import Env from '../data/.env.json';
 import '../App.css'
 
 class Team extends React.Component {
@@ -9,13 +11,60 @@ class Team extends React.Component {
     this.texts = {
       title: "Equipo"
     }
+    this.state = {
+      weekChartData: [],
+      memberPics: []
+    }
+    this.getTeamData = this.getTeamData.bind(this);
   }
+
+  componentDidMount() {
+    this.getTeamData();
+  }
+
+  getTeamData() {
+    fetch(
+      this.props.apiService + 'team',
+      {
+        method: 'get',
+        withCredentials: true,
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Authorization': Env.token,
+          'Content-Type': 'application/json'
+        }
+      }
+    ).then(response => {
+      return response.json();
+    }
+  ).then(json => {
+      let taskData = [];
+      let memberPicsData = [];
+      json.data.forEach(person => {
+        // Recorro data del api y saco nombre y nro de tasks de cada uno
+        taskData.push({
+          member: person.nombre,
+          tasks: person.tasks
+        });
+        // Recorro data del api y saco la foto de cada uno
+        memberPicsData.push(person.photo);
+      });
+      this.setState({
+        weekChartData: taskData,
+        memberPics: memberPicsData
+      })
+    });
+  }
+
   render() {
     return (
       <div className="team__container databoard">
         <Header title={this.texts.title} />
         <div className="main__container-team">
-          <div className="dashborad chart__tasks"><p className="tasks-title">Tareas Semana</p><div className="tasks-pic"></div></div>
+          <WeekTasksChart
+            data={this.state.weekChartData}
+            memberPics={this.state.memberPics}
+          />
           <div className="dashborad chart__commits"><p className="commits-title">Commits Semana</p><div className="commits-pic"></div></div>
           <div className="dashborad average__container-commits"><p className="commits-number">5</p><p className="commits-text">Commits/dia/persona</p></div>
           <div className="dashborad average__container-tasks"><p className="tasks-number">4</p><p className="tasks-text">Tareas/dia/persona</p></div>
