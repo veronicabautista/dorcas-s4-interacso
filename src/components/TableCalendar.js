@@ -7,6 +7,7 @@ class Table extends React.Component {
     this.state = {
       datesToPrint: []
     };
+    this.milisecondsInADay = 86400000;
     this.getCalendarDates();
   }
   componentDidMount() {
@@ -14,17 +15,18 @@ class Table extends React.Component {
   }
   makeCalendarStructure() {
     let datesInHTML = [];
+    let todayDate = new Date();
     this.state.datesToPrint.forEach(dateToPrint => {
       let dayContainerClass = 'day__container';
-      if (dateToPrint.event !== null) {
+      if (dateToPrint.events.length !== 0) {
         dayContainerClass += ' withEvent';
       }
       datesInHTML.push(
         <div className = {dayContainerClass} key={dateToPrint.label}>
           <div className = "day__label">{dateToPrint.label}</div>
           <div className = "day__notifications">
-            <div className = "day__notifications-event">{dateToPrint.event}</div>
-            <div className = "day__notifications-deadline">{dateToPrint.deadline}</div>
+          {this.makeEventsStructure(dateToPrint.events)}
+          {this.makeDeadlinesStructure(dateToPrint.deadlines, dateToPrint.dateObject, todayDate)}
           </div>
         </div>
       )
@@ -38,21 +40,66 @@ class Table extends React.Component {
       {datesInHTML}
     </div>
   }
+  makeEventsStructure(events) {
+    let eventsInHTML = [];
+    events.forEach(event => {
+      eventsInHTML.push(
+        <div className ="day__notifications-event">{event}</div>
+      );
+    });
+    return eventsInHTML;
+  }
+  makeDeadlinesStructure(deadlines, dateObject, todayDate){
+    let deadlinesInHTML = [];
+    deadlines.forEach(deadline => {
+      let colorClass = this.getDeadlineColor(deadline.completed, dateObject, todayDate);
+      deadlinesInHTML.push(
+        <div className ={"day__notifications-deadline " + colorClass}>
+          <span className={"deadline__point " + colorClass}></span>
+          {deadline.text}
+        </div>
+      );
+    });
+    return deadlinesInHTML;
+  }
+  getDeadlineColor(completed, dateObject, todayDate) {
+    let tomorrow = todayDate.getTime() + this.milisecondsInADay;
+    let nextWeekInMiliseconds = this.nextWeekAndRestOfThisWeek(todayDate);
+    let warningDays = nextWeekInMiliseconds + todayDate.getTime();
+    if(completed === true) {
+      return "completed";
+    } else {
+      if(dateObject.getTime() <= todayDate.getTime()) {
+        return "pastDeadline";
+      } else if(dateObject.getTime() > todayDate.getTime() && dateObject.getTime() <= warningDays) {
+        return "nearbyDeadline";
+      } else {
+        return "gotSlack"
+      }
+    }
+
+  }
+  nextWeekAndRestOfThisWeek(todayDate){
+    let nextWeekAndRestOfThisWeek = ((6 - todayDate.getDay()) + 1) + 7;
+    let nextWeekInMiliseconds = nextWeekAndRestOfThisWeek * this.milisecondsInADay
+    return nextWeekInMiliseconds;
+  }
   getCalendarDates() {
-    let startDate = this.calculateStartDate();
+    let calendarDate = this.calculateStartDate();
     let weekDays = 0;
     let datesToPrint = this.state.datesToPrint;
     for (let i = 0; i < 20; i++) {
       datesToPrint.push(
         {
-          date: this.formatDate(startDate),
-          label: startDate.getDate(),
-          event: null,
-          deadline: null
+          date: this.formatDate(calendarDate),
+          dateObject: calendarDate,
+          label: calendarDate.getDate(),
+          events: [],
+          deadlines: []
         })
-        startDate = this.incrementDaysInMiliseconds(startDate, 1);
+        calendarDate = this.incrementDaysInMiliseconds(calendarDate, 1);
         if (weekDays === 4){
-          startDate = this.incrementDaysInMiliseconds(startDate, 2);
+          calendarDate = this.incrementDaysInMiliseconds(calendarDate, 2);
           weekDays = 0;
         } else {
           weekDays++;
@@ -67,7 +114,6 @@ class Table extends React.Component {
       return date.getFullYear() + '-' + month + '-' + day;
     }
     getCalendarNotifications() {
-      console.log(Env.token);
       if(typeof Env !== "undefined" & Env.token !== "undefined") {
         fetch(
           this.props.apiService + 'calendar',
@@ -97,16 +143,19 @@ class Table extends React.Component {
       alert("No esta usted autorizado");
     }
   }
-  setDatesNotifications(json){
+  setDatesNotifications(apiResponse){
     let datesToPrint = this.state.datesToPrint;
     datesToPrint.forEach((dateToPrint, index) => {
-      json.forEach(dayFromApi => {
+      apiResponse.forEach(dayFromApi => {
         if (dayFromApi.datecalendar === dateToPrint.date) {
           if (dayFromApi.datetype === 'event') {
-            dateToPrint.event = dayFromApi.text
+            dateToPrint.events.push(dayFromApi.text);
           }
           if (dayFromApi.datetype === 'deadline') {
-            dateToPrint.deadline = dayFromApi.text
+            dateToPrint.deadlines.push({
+              "text": dayFromApi.text,
+              "completed": dayFromApi.completed
+            });
           }
         }
       });
@@ -117,15 +166,13 @@ class Table extends React.Component {
     })
   }
   incrementDaysInMiliseconds(date, numDays) {
-    let milisecondsInADay = 86400000;
-    let totalMiliseconds = milisecondsInADay * numDays;
+    let totalMiliseconds = this.milisecondsInADay * numDays;
     return new Date(date.getTime() + totalMiliseconds);
   }
   calculateStartDate() {
     let today = new Date();
-    let milisecondsInADay = 86400000;
-    let mondayPastWeek = today.getDay()-1 + 7;
-    let mondayPastWeekMiliseconds = milisecondsInADay * mondayPastWeek;
+    let mondayPastWeek = (today.getDay() - 1) + 7;
+    let mondayPastWeekMiliseconds = this.milisecondsInADay * mondayPastWeek;
     let miliseconds = today.getTime() - mondayPastWeekMiliseconds;
     let startDate = new Date(miliseconds);
     return startDate; //objeto con el día de inicio
