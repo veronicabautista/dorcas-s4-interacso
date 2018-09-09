@@ -1,6 +1,8 @@
 import React from "react";
 import Header from './Header';
 import WeekTasksChart from './WeekTasksChart';
+import WeekCommitsChart from './WeekCommitsChart';
+import TeamStatusBar from './TeamStatusBar';
 import Notifications from './Notifications';
 import Env from '../data/.env.json';
 import '../App.css'
@@ -38,20 +40,29 @@ class Team extends React.Component {
       return response.json();
     }
   ).then(json => {
-      let taskData = [];
+      let teamData = [];
       let memberPicsData = [];
+      let averageCommits = 0;
+      let averageTask = 0;
+
+      console.log(json.data)
       json.data.forEach(person => {
         // Recorro data del api y saco nombre y nro de tasks de cada uno
-        taskData.push({
+        averageCommits = averageCommits + person.commits
+        averageTask = averageTask + person.tasks
+        teamData.push({
           member: person.nombre,
-          tasks: person.tasks
+          tasks: person.tasks,
+          commits: person.commits
         });
         // Recorro data del api y saco la foto de cada uno
         memberPicsData.push(person.photo);
       });
       this.setState({
-        weekChartData: taskData,
-        memberPics: memberPicsData
+        weekChartData: teamData,
+        memberPics: memberPicsData,
+        averageTask: averageTask/json.data.length,
+        averageCommits: averageCommits/json.data.length
       })
     });
   }
@@ -65,9 +76,14 @@ class Team extends React.Component {
             data={this.state.weekChartData}
             memberPics={this.state.memberPics}
           />
-          <div className="dashborad chart__commits"><p className="commits-title">Commits Semana</p><div className="commits-pic"></div></div>
-          <div className="dashborad average__container-commits"><p className="commits-number">5</p><p className="commits-text">Commits/dia/persona</p></div>
-          <div className="dashborad average__container-tasks"><p className="tasks-number">4</p><p className="tasks-text">Tareas/dia/persona</p></div>
+          <WeekCommitsChart
+            data={this.state.weekChartData}
+            memberPics={this.state.memberPics}
+          />
+          <TeamStatusBar
+           averageTask={this.state.averageTask}
+           averageCommits={this.state.averageCommits}
+          />
           <div className="dashborad people__container-asana"><p className="asana-title">Asana killer</p><div className="profile-pic"></div><p className="killer-name">John Doe</p><p className="killer-record">145</p><p className="killer-detail">Tareas completadas esta semana</p></div>
           <div className="dashborad people__container-git"><p className="git-title">Git killer</p><div className="profile-pic"></div><p className="killer-name">John Doe</p><p className="killer-record">305</p><p className="killer-detail">Commits esta semana</p></div>
         </div>
