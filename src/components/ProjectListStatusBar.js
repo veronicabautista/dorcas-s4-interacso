@@ -1,7 +1,6 @@
 import React from "react";
 import Env from '../data/.env.json';
 
-
 class ProjectListStatusBar extends React.Component {
     constructor(props){
       super(props);
@@ -48,7 +47,7 @@ class ProjectListStatusBar extends React.Component {
     return (
         <div className="projects__statistics--container">
         <div className="statistics__data projects__projects">
-          <div className="data-number"><p>{this.active}</p></div>
+          <div className="data-number"><p>{this.state.active}</p></div>
           <div className="data-tags"><p>Proyectos activos</p></div>
         </div>
         <div className="statistics__data projects__tasks">
