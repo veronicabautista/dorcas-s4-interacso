@@ -26,21 +26,22 @@ class ProjectListStatusBar extends React.Component {
     getProjectsInfo() {
       fetch(
         this.props.apiService + 'projects',
-        {
+          {
           method: 'get',
           withCredentials: true,
           headers: {
             'Cache-Control': 'no-cache',
             'Authorization': Env.token,
             'Content-Type': 'application/json'
+            }
           }
-        }
       )
       .then(response => {
         return response.json();
       }
+      .then 
     )
-    }
+  }
 
 
   render() {
