@@ -7,11 +7,11 @@ class ProjectListStatusBar extends React.Component {
 
     this.state = {
       projectsdata: [],
-      active: '',
+/*      active: '',
       tasksTotal: '',
       tasksCompleted: '',
       commits: '',
-      hours: ''
+      hours: '' */
     }
   }
 
@@ -37,32 +37,33 @@ class ProjectListStatusBar extends React.Component {
     })
     .then((json) => {
       this.setState ({
-        projectsdata: json.data
+        projectsdata: json.data[0]
       });
     });
   }
 
   render() {
+    let projects = this.state.projectsdata
     return (
         <div className="projects__statistics--container">
         <div className="statistics__data projects__projects">
-          <div className="data-number"><p>5</p></div>
+          <div className="data-number"><p>{projects.active}</p></div>
           <div className="data-tags"><p>Proyectos activos</p></div>
         </div>
         <div className="statistics__data projects__tasks">
-          <div className="data-number"><p>1.750</p></div>
+          <div className="data-number"><p>{projects.tasksTotal}</p></div>
           <div className="data-tags"><p>tareas a completar</p></div>
         </div>
         <div className="statistics__data projects__weeks">
-          <div className="data-number"><p>205</p></div>
+          <div className="data-number"><p>{projects.tasksCompleted}</p></div>
           <div className="data-tags"><p>completadas esta semana</p></div>
         </div>
         <div className="statistics__data projects__commits">
-          <div className="data-number"><p>50</p></div>
+          <div className="data-number"><p>{projects.commits}</p></div>
           <div className="data-tags"><p>commits</p></div>
         </div>
         <div className="statistics__data projects__hours">
-          <div className="data-number"><p>205.6</p></div>
+          <div className="data-number"><p>{projects.hours}</p></div>
           <div className="data-tags"><p>horas</p></div>
         </div>
       </div>
