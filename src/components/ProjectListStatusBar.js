@@ -2,53 +2,51 @@ import React from "react";
 import Env from '../data/.env.json';
 
 class ProjectListStatusBar extends React.Component {
-    constructor(props){
-      super(props);
+  constructor(props) {
+    super(props);
 
-      this.state = {
-        projectsInfo: [],
-        active: 0
-      };
-
-      this.activeProjects = this.activeProjects.bind(this);
+    this.state = {
+      projectsdata: [],
+      active: '',
+      tasksTotal: '',
+      tasksCompleted: '',
+      commits: '',
+      hours: ''
     }
-    componentDidMount() {
-      this.getProjectsInfo();
-    }
-
-    activeProjects(e) {
-      const resultActive = parseInt(e.currentTarget.value, 10);
-      this.setState({
-        active: resultActive
-      });
-    }
-
-    getProjectsInfo() {
-      fetch(
-        this.props.apiService + 'projects',
-          {
-          method: 'get',
-          withCredentials: true,
-          headers: {
-            'Cache-Control': 'no-cache',
-            'Authorization': Env.token,
-            'Content-Type': 'application/json'
-            }
-          }
-      )
-      .then(response => {
-        return response.json();
-      }
-      .then 
-    )
   }
 
+  componentDidMount() {
+    this.callProjectsData();
+  }
+
+  callProjectsData() {
+    fetch(
+      this.props.apiService + 'projects',
+      {
+        method: 'get',
+        withCredentials: true,
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Authorization': Env.token,
+          'Content-Type': 'application/json'
+        }
+      }
+    )
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      this.setState ({
+        projectsdata: json.data
+      });
+    });
+  }
 
   render() {
     return (
         <div className="projects__statistics--container">
         <div className="statistics__data projects__projects">
-          <div className="data-number"><p>{this.state.active}</p></div>
+          <div className="data-number"><p>5</p></div>
           <div className="data-tags"><p>Proyectos activos</p></div>
         </div>
         <div className="statistics__data projects__tasks">
