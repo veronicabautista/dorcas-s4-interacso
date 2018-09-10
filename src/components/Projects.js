@@ -1,6 +1,6 @@
 import React from "react";
 import Header from './Header';
-import ProjectListStatusBar from "./ProjectListStatusBar"; 
+import ProjectListStatusBar from "./ProjectListStatusBar";
 import Notifications from "./Notifications";
 import Env from '../data/.env.json';
 import MostCommitsChart from "./MostCommitsChart";
@@ -53,33 +53,33 @@ class Projects extends React.Component {
           projectsCharts: projectsData
         })
         console.log(projectsData)
+
+        let hoursData = [];
+
+        for (var hoursProject in json.data[0].hourRank) {
+          hoursData.push({
+           hoursName: hoursProject,
+           time: json.data[0].hourRank[hoursProject]
+         });
+        }
+          this.setState({
+            hoursCharts: hoursData
+          });
+          console.log(hoursData)
+        });
       }
-  ).then(json => {
-      let hoursData = [];
 
-      for (var hoursProject in json.data[0].hourRank) {
-        hoursData.push({
-         hoursName: hoursProject,
-         hours: json.data[0].hourRank[hoursProject]
-       });
-      }
-        this.setState({
-          hoursCharts: hoursData
-        })
-      });
-    }
-
-
-  render() {
+  render(){
     return (
       <div className="projects__container databoard">
         <Header title={this.texts.title} />
         <ProjectListStatusBar apiService={this.props.apiService} />
         <MostCommitsChart data={this.state.projectsCharts}/>
-        <MostHoursChart time={this.state.hoursCharts}/>
+        <MostHoursChart hours={this.state.hoursCharts}/>
         <Notifications />
      </div>
    );
  }
 }
+
 export default Projects;

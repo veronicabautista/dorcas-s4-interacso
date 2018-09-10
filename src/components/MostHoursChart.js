@@ -36,8 +36,7 @@ const series  =
     visible: false
   }
 
-class ProjectsChart extends React.Component {
-
+class MostHoursChart extends React.Component {
 
   render(){
     return (
@@ -59,4 +58,4 @@ class ProjectsChart extends React.Component {
   }
 }
 
-export default ProjectsChart;
+export default MostHoursChart;
