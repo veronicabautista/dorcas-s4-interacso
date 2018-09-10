@@ -1,12 +1,11 @@
 import React from 'react';
 import { Chart } from 'devextreme-react';
-import 'devextreme/dist/css/dx.common.css';
-import 'devextreme/dist/css/dx.light.compact.css';
+
 
 const settings =
         {
             type: "bar",
-            argumentField: "member",
+            argumentField: "projectName",
             color: "green"
         };
 const series  =
@@ -19,14 +18,14 @@ const series  =
       ];
   const size =
       {
-        height: 120
+        height: 300
 
       }
   const axisSettings =
       {
         label: {
           overlappingBehavior: "none",
-          visible: false
+
         },
         grid:{
           visible: false
@@ -43,16 +42,18 @@ class ProjectsChart extends React.Component {
   render(){
     return (
        <div className="statistics__chart">
-         <div className="chart-commits"><p>Proyectos más activos (commits)</p></div>
-         <Chart
-            dataSource={this.props.data}
-            commonSeriesSettings={settings}
-            series={series}
-            size={size}
-            argumentAxis={axisSettings}
-            valueAxis={axisSettings}
-            legend={legendsSettings}
-        />
+         <div className="chart-commits">
+          <p>Proyectos más activos (commits)</p>
+          <Chart
+              dataSource={this.props.data}
+              commonSeriesSettings={settings}
+              series={series}
+              size={size}
+              argumentAxis={axisSettings}
+              valueAxis={axisSettings}
+              legend={legendsSettings}
+          />
+        </div>
          <div className="chart-hours"><p>Proyectos más activos (horas)</p></div>
        </div>
       );

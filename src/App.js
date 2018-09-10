@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       currentDataboard: 0,
       currentTransition: "0.5s",
-      currentSlideLeft: "-300%",
+      currentSlideLeft: "-100%",
       totalDataboards: 4
     }
     this.showNextDashboard = this.showNextDashboard.bind(this)
@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <div className="visor" style={sliderStyles}>
         <Calendar apiService = {this.apiService}/>
-        <Projects />
+        <Projects apiService = {this.apiService} />
         <ProjectDetail />
         <Team apiService = {this.apiService}/>
       </div>

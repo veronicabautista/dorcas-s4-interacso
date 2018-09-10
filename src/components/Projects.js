@@ -1,6 +1,8 @@
 import React from "react";
 import Header from './Header';
 import Notifications from "./Notifications";
+import Env from '../data/.env.json';
+import MostCommitsChart from "./MostCommitsChart"
 
 class Projects extends React.Component {
   constructor(props) {
@@ -31,28 +33,26 @@ class Projects extends React.Component {
         }
       }
     ).then(response => {
+      console.log(response)
       return response.json();
     }
   ).then(json => {
       let projectsData = [];
 
-      console.log(json.data)
-      json.data.forEach(project => {
-        // Recorro data del api y saco nombre y nro de tasks de cada uno
-          projectsData.push({
------>>>          commitsChart: project.,
-        });
-        // Recorro data del api y saco la foto de cada uno
-        memberPicsData.push(person.photo);
+      console.log(json.data[0])
+      for (var elemento in json.data[0].commitRank) {
+        projectsData.push({
+         projectName: elemento,
+         commits: json.data[0].commitRank[elemento]
+       });
+      }
+        this.setState({
+          projectsCharts: projectsData
+        })
+        console.log(projectsData)
       });
-      this.setState({
-        weekChartData: teamData,
-        memberPics: memberPicsData,
-        averageTask: averageTask/json.data.length,
-        averageCommits: averageCommits/json.data.length
-      })
-    });
-  }
+    }
+
 
   render() {
     return (
@@ -80,7 +80,8 @@ class Projects extends React.Component {
            <div className="data-tags"><p>horas</p></div>
          </div>
        </div>
-       <MostCommitsChart />
+       <MostCommitsChart
+        data={this.state.projectsCharts}/>
        <Notifications />
      </div>
    );
