@@ -2,6 +2,7 @@ import React from "react";
 import Header from './Header';
 import Notifications from './Notifications';
 import '../App.css'
+import Env from '../data/.env.json';
 
 class Team extends React.Component {
   constructor(props) {
@@ -9,7 +10,61 @@ class Team extends React.Component {
     this.texts = {
       title: "Equipo"
     }
+    this.state = {
+      tasksWinner: {},
+      commitsWinner: {}
+    }
   }
+
+  componentDidMount() {
+    this.getKillerInfo();
+  }
+
+  getKillerInfo() {
+    if(typeof Env !== "undefined" & Env.token !== "undefined") {
+      fetch(
+        this.props.apiService + 'team',
+        {
+          method: 'get',
+          withCredentials: true,
+          headers: {
+            'Cache-Control': 'no-cache',
+            'Authorization': Env.token,
+            'Content-Type': 'application/json'
+          }
+        }
+      ).then(response => {
+        if(response.status === 401){
+          throw Error(response.statusText);
+        } else {
+          return response.json();
+        }
+      }
+    ).then(json => {
+      this.getTasksWinner(json);
+    }).catch(error => {
+      alert("El token es incorrecto");
+      console.error(error);
+    });
+  } else {
+    alert("No esta usted autorizado");
+  }
+}
+
+  getTasksWinner(json) {
+    let maxTasks = 0;
+    let winnerTasksObj = {};
+    for (let i = 0; i < json.data.length; i++) {
+      if (json.data[i].tasks > maxTasks) {
+        maxTasks = json.data[i].tasks;
+        winnerTasksObj = json.data[i];
+      }
+    }
+    this.setState({
+      tasksWinner: winnerTasksObj,
+    });
+  }
+
   render() {
     return (
       <div className="team__container databoard">
