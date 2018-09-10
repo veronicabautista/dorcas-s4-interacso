@@ -12,7 +12,15 @@ const series  =
        [
         {
           color: "#57718D",
-          valueField: "commits"
+          valueField: "commits",
+          label: {
+            visible: true,
+            backgroundColor: "none",
+            font: {
+              color: "white",
+              size: 18
+            }
+          }
         },
 
       ];
@@ -21,17 +29,17 @@ const series  =
         height: 300
 
       }
-  const axisSettings =
+  const argumentAxisSettings =
       {
         label: {
           overlappingBehavior: "none",
-
-        },
-        grid:{
-          visible: false
         }
-
       }
+  const valueAxisSettings = {
+    grid: {
+      visible: false
+    }
+  }
   const legendsSettings = {
     visible: false
   }
@@ -49,8 +57,8 @@ class ProjectsChart extends React.Component {
               commonSeriesSettings={settings}
               series={series}
               size={size}
-              argumentAxis={axisSettings}
-              valueAxis={axisSettings}
+              argumentAxis={argumentAxisSettings}
+              valueAxis={valueAxisSettings}
               legend={legendsSettings}
           />
         </div>
