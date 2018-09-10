@@ -1,5 +1,6 @@
 import React from "react";
 import Header from './Header';
+import ProjectListStatusBar from "./ProjectListStatusBar"; 
 import Notifications from "./Notifications";
 
 class Projects extends React.Component {
@@ -40,7 +41,7 @@ class Projects extends React.Component {
       json.data.forEach(project => {
         // Recorro data del api y saco nombre y nro de tasks de cada uno
           projectsData.push({
------>>>          commitsChart: project.,
+          commitsChart: project,
         });
         // Recorro data del api y saco la foto de cada uno
         memberPicsData.push(person.photo);
@@ -57,31 +58,10 @@ class Projects extends React.Component {
   render() {
     return (
       <div className="projects__container databoard">
-      <Header title={this.texts.title} />
-       <div className="projects__statistics--container">
-         <div className="statistics__data projects__projects">
-           <div className="data-number"><p>15</p></div>
-           <div className="data-tags"><p>Proyectos activos</p></div>
-         </div>
-         <div className="statistics__data projects__tasks">
-           <div className="data-number"><p>1.750</p></div>
-           <div className="data-tags"><p>tareas a completar</p></div>
-         </div>
-         <div className="statistics__data projects__weeks">
-           <div className="data-number"><p>205</p></div>
-           <div className="data-tags"><p>completadas esta semana</p></div>
-         </div>
-         <div className="statistics__data projects__commits">
-           <div className="data-number"><p>50</p></div>
-           <div className="data-tags"><p>commits</p></div>
-         </div>
-         <div className="statistics__data projects__hours">
-           <div className="data-number"><p>205.6</p></div>
-           <div className="data-tags"><p>horas</p></div>
-         </div>
-       </div>
-       <MostCommitsChart />
-       <Notifications />
+        <Header title={this.texts.title} />
+        <ProjectListStatusBar apiService={this.props.apiService} />
+        <MostCommitsChart />
+        <Notifications />
      </div>
    );
  }
