@@ -5,14 +5,14 @@ import { Chart } from 'devextreme-react';
 const settings =
         {
             type: "bar",
-            argumentField: "projectName",
+            argumentField: "hoursName",
             color: "green"
         };
 const series  =
        [
         {
           color: "#57718D",
-          valueField: "commits",
+          valueField: "time",
         },
 
       ];
@@ -42,18 +42,18 @@ class ProjectsChart extends React.Component {
   render(){
     return (
        <div className="statistics__chart">
-         <div className="chart-commits">
-          <p>Proyectos más activos (commits)</p>
-          <Chart
-              dataSource={this.props.data}
+         <div className="chart-hours">
+            <p>Proyectos más activos (horas)</p>
+            <Chart
+              dataSource={this.props.hours}
               commonSeriesSettings={settings}
               series={series}
               size={size}
               argumentAxis={axisSettings}
               valueAxis={axisSettings}
               legend={legendsSettings}
-          />
-        </div>
+            />
+         </div>
        </div>
       );
   }
