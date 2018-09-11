@@ -20,9 +20,9 @@ class App extends Component {
     this.showNextDashboard = this.showNextDashboard.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.effect = setInterval(this.showNextDashboard, 3000);
-  // }
+  componentDidMount() {
+    this.effect = setInterval(this.showNextDashboard, 3000);
+  }
 
   showNextDashboard(){
     if (this.state.currentDataboard == this.state.totalDataboards - 1) {
@@ -54,8 +54,8 @@ class App extends Component {
    }
     return (
       <div className="visor" style={sliderStyles}>
-        <Projects apiService = {this.apiService}/>
         <Calendar apiService = {this.apiService}/>
+        <Projects apiService = {this.apiService}/>
         <ProjectDetail />
         <Team apiService = {this.apiService}/>
         <Calendar apiService = {this.apiService}/>
