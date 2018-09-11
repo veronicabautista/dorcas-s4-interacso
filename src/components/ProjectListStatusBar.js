@@ -6,12 +6,7 @@ class ProjectListStatusBar extends React.Component {
     super(props);
 
     this.state = {
-      projectsdata: [],
-/*      active: '',
-      tasksTotal: '',
-      tasksCompleted: '',
-      commits: '',
-      hours: '' */
+      projectsdata: []
     }
   }
 

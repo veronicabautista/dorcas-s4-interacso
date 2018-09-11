@@ -1,7 +1,7 @@
 .calendar__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 75px 200px 200px 200px 200px;
   grid-gap: 2px;
   font-family: $montserrat;
   font-size: $xx_large;
@@ -10,14 +10,53 @@
   height: 100%;
   margin: 0 auto;
 }
+.calendar__weekday {
+  margin-left: 25px;
+}
 .day__container {
   background-color: $calendarDayContainer;
-  min-height: 15vh;
+  padding: 25px;
   &.withEvent {
     border-bottom: solid 10px $eventDetail;
   }
 }
-.day__notifications {
+.day__notifications{
   font-size: $normal;
   color: $futureEvent;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: auto;
+  .day__notifications-deadline {
+    &.completed {
+      color: $deadlineFinished;
+    }
+    &.pastDeadline {
+      color: $deadlineUnfinished;
+    }
+    &.nearbyDeadline {
+      color: $deadlineClose;
+    }
+    &.gotSlack {
+      color: $futureDeadline;
+    }
+  }
+}
+.deadline__point {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+  &.completed {
+    background-color: $deadlineFinished;
+  }
+  &.pastDeadline {
+    background-color: $deadlineUnfinished;
+  }
+  &.nearbyDeadline {
+    background-color: $deadlineClose;
+  }
+  &.gotSlack {
+    background-color: $futureDeadline;
+  }
 }

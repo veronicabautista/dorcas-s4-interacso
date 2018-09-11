@@ -34,7 +34,7 @@
 .calendar__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 75px 200px 200px 200px 200px;
   grid-gap: 2px;
   font-family: "Montserrat", sans-serif;
   font-size: 48px;
@@ -43,15 +43,44 @@
   height: 100%;
   margin: 0 auto; }
 
+.calendar__weekday {
+  margin-left: 25px; }
+
 .day__container {
   background-color: #17517f;
-  min-height: 15vh; }
+  padding: 25px; }
   .day__container.withEvent {
     border-bottom: solid 10px #31cef2; }
 
 .day__notifications {
   font-size: 25px;
-  color: #31cef2; }
+  color: #31cef2;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: auto; }
+  .day__notifications .day__notifications-deadline.completed {
+    color: #7f7f7f; }
+  .day__notifications .day__notifications-deadline.pastDeadline {
+    color: #fa2913; }
+  .day__notifications .day__notifications-deadline.nearbyDeadline {
+    color: #f6c500; }
+  .day__notifications .day__notifications-deadline.gotSlack {
+    color: #31cef2; }
+
+.deadline__point {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px; }
+  .deadline__point.completed {
+    background-color: #7f7f7f; }
+  .deadline__point.pastDeadline {
+    background-color: #fa2913; }
+  .deadline__point.nearbyDeadline {
+    background-color: #f6c500; }
+  .deadline__point.gotSlack {
+    background-color: #31cef2; }
 
 .projects__statistics--container {
   display: grid;
