@@ -41,45 +41,53 @@ class Projects extends React.Component {
       return response.json();
     }
   ).then(json => {
-      let projectsData = [];
+    let projectsData = [];
 
-      for (var elemento in json.data[0].commitRank) {
-        projectsData.push({
-         projectName: elemento,
-         commits: json.data[0].commitRank[elemento]
-       });
-      }
-        this.setState({
-          projectsCharts: projectsData
-        })
-        console.log(projectsData)
+    for (var elemento in json.data[0].commitRank) {
+      projectsData.push({
+        projectName: elemento,
+        commits: json.data[0].commitRank[elemento]
+      });
+    }
+    this.setState({
+      projectsCharts: projectsData
+    })
+    console.log(projectsData)
 
-        let hoursData = [];
+    let hoursData = [];
 
-        for (var hoursProject in json.data[0].hourRank) {
-          hoursData.push({
-           hoursName: hoursProject,
-           time: json.data[0].hourRank[hoursProject]
-         });
-        }
-          this.setState({
-            hoursCharts: hoursData
-          });
-          console.log(hoursData)
-        });
-      }
+    for (var hoursProject in json.data[0].hourRank) {
+      hoursData.push({
+        hoursName: hoursProject,
+        time: json.data[0].hourRank[hoursProject]
+      });
+    }
+    this.setState({
+      hoursCharts: hoursData
+    });
+    console.log(hoursData)
+  });
+}
 
-  render(){
-    return (
-      <div className="projects__container databoard">
-        <Header title={this.texts.title} />
-        <ProjectListStatusBar apiService={this.props.apiService} />
-        <MostCommitsChart data={this.state.projectsCharts}/>
-        <MostHoursChart hours={this.state.hoursCharts}/>
-        <Notifications />
-     </div>
-   );
- }
+render(){
+  return (
+    <div className="projects__container databoard">
+      <Header title={this.texts.title} />
+      <ProjectListStatusBar apiService={this.props.apiService} />
+      <div className="statistics__chart">
+        <div className="chart-commits">
+          <p>Proyectos más activos (commits)</p>
+          <MostCommitsChart data={this.state.projectsCharts}/>
+        </div>
+        <div className="chart-commits">
+          <p>Proyectos más activos (horas)</p>
+          <MostHoursChart hours={this.state.hoursCharts}/>
+        </div>
+      </div>
+      <Notifications />
+    </div>
+  );
+}
 }
 
 export default Projects;
