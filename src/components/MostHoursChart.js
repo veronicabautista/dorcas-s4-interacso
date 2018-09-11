@@ -18,7 +18,8 @@ const series  =
       backgroundColor: "none",
       font: {
         color: "white",
-        size: 18
+        size: 25,
+        family: "Open Sans"
       }
     }
   },
@@ -33,7 +34,11 @@ const axisSettings =
 {
   label: {
     overlappingBehavior: "none",
-
+    font: {
+      color: "white",
+      family: "Open Sans",
+      size: 20
+    }
   },
   grid:{
     visible: false
