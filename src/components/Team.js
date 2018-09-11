@@ -48,14 +48,13 @@ class Team extends React.Component {
         }
       }
     ).then(json => {
-      let teamData = [];
-      let memberPicsData = [];
+      const teamData = [];
+      const memberPicsData = [];
       let averageCommits = 0;
       let averageTask = 0;
 
       console.log(json.data)
       json.data.forEach(person => {
-        // Recorro data del api y saco nombre y nro de tasks de cada uno
         averageCommits = averageCommits + person.commits
         averageTask = averageTask + person.tasks
         teamData.push({
@@ -63,7 +62,6 @@ class Team extends React.Component {
           tasks: person.tasks,
           commits: person.commits
         });
-        // Recorro data del api y saco la foto de cada uno
         memberPicsData.push(person.photo);
       });
       this.setState({

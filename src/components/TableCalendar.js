@@ -14,8 +14,8 @@ class Table extends React.Component {
     this.getCalendarNotifications();
   }
   makeCalendarStructure() {
-    let datesInHTML = [];
-    let todayDate = new Date();
+    const datesInHTML = [];
+    const todayDate = new Date();
     this.state.datesToPrint.forEach(dateToPrint => {
       let dayContainerClass = 'day__container';
       if (dateToPrint.events.length !== 0) {
@@ -41,7 +41,7 @@ class Table extends React.Component {
     </div>
   }
   makeEventsStructure(events) {
-    let eventsInHTML = [];
+    const eventsInHTML = [];
     events.forEach(event => {
       eventsInHTML.push(
         <div className ="day__notifications-event">{event}</div>
@@ -50,9 +50,9 @@ class Table extends React.Component {
     return eventsInHTML;
   }
   makeDeadlinesStructure(deadlines, dateObject, todayDate){
-    let deadlinesInHTML = [];
+    const deadlinesInHTML = [];
     deadlines.forEach(deadline => {
-      let colorClass = this.getDeadlineColor(deadline.completed, dateObject, todayDate);
+      const colorClass = this.getDeadlineColor(deadline.completed, dateObject, todayDate);
       deadlinesInHTML.push(
         <div className ={"day__notifications-deadline " + colorClass}>
           <span className={"deadline__point " + colorClass}></span>
@@ -63,9 +63,9 @@ class Table extends React.Component {
     return deadlinesInHTML;
   }
   getDeadlineColor(completed, dateObject, todayDate) {
-    let tomorrow = todayDate.getTime() + this.milisecondsInADay;
-    let nextWeekInMiliseconds = this.nextWeekAndRestOfThisWeek(todayDate);
-    let warningDays = nextWeekInMiliseconds + todayDate.getTime();
+    const tomorrow = todayDate.getTime() + this.milisecondsInADay;
+    const nextWeekInMiliseconds = this.nextWeekAndRestOfThisWeek(todayDate);
+    const warningDays = nextWeekInMiliseconds + todayDate.getTime();
     if(completed === true) {
       return "completed";
     } else {
@@ -80,8 +80,8 @@ class Table extends React.Component {
 
   }
   nextWeekAndRestOfThisWeek(todayDate){
-    let nextWeekAndRestOfThisWeek = ((6 - todayDate.getDay()) + 1) + 7;
-    let nextWeekInMiliseconds = nextWeekAndRestOfThisWeek * this.milisecondsInADay
+    const nextWeekAndRestOfThisWeek = ((6 - todayDate.getDay()) + 1) + 7;
+    const nextWeekInMiliseconds = nextWeekAndRestOfThisWeek * this.milisecondsInADay
     return nextWeekInMiliseconds;
   }
   getCalendarDates() {
@@ -109,8 +109,8 @@ class Table extends React.Component {
       this.state.datesToPrint = datesToPrint;
     }
     formatDate(date) {
-      let month = ('0' + (date.getMonth() + 1)).slice(-2);
-      let day = ('0' + date.getDate()).slice(-2);
+      const month = ('0' + (date.getMonth() + 1)).slice(-2);
+      const day = ('0' + date.getDate()).slice(-2);
       return date.getFullYear() + '-' + month + '-' + day;
     }
     getCalendarNotifications() {
@@ -144,7 +144,7 @@ class Table extends React.Component {
     }
   }
   setDatesNotifications(apiResponse){
-    let datesToPrint = this.state.datesToPrint;
+    const datesToPrint = this.state.datesToPrint;
     datesToPrint.forEach((dateToPrint, index) => {
       apiResponse.forEach(dayFromApi => {
         if (dayFromApi.datecalendar === dateToPrint.date) {
@@ -166,15 +166,15 @@ class Table extends React.Component {
     })
   }
   incrementDaysInMiliseconds(date, numDays) {
-    let totalMiliseconds = this.milisecondsInADay * numDays;
+    const totalMiliseconds = this.milisecondsInADay * numDays;
     return new Date(date.getTime() + totalMiliseconds);
   }
   calculateStartDate() {
-    let today = new Date();
-    let mondayPastWeek = (today.getDay() - 1) + 7;
-    let mondayPastWeekMiliseconds = this.milisecondsInADay * mondayPastWeek;
-    let miliseconds = today.getTime() - mondayPastWeekMiliseconds;
-    let startDate = new Date(miliseconds);
+    const today = new Date();
+    const mondayPastWeek = (today.getDay() - 1) + 7;
+    const mondayPastWeekMiliseconds = this.milisecondsInADay * mondayPastWeek;
+    const miliseconds = today.getTime() - mondayPastWeekMiliseconds;
+    const startDate = new Date(miliseconds);
     return startDate; //objeto con el día de inicio
   }
   render() {
