@@ -183,7 +183,8 @@
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: 900;
-  padding: 20px 50px 24px 50px; }
+  padding: 20px 50px 24px 50px;
+  margin-top: 28px; }
 
 .tasks-number {
   font-weight: 600;
@@ -197,7 +198,7 @@
 
 .people__container-asana {
   grid-column: 3;
-  grid-row: 5/ 13;
+  grid-row: 6/ 13;
   background-color: #17517f;
   color: #ffffff;
   text-align: center;
@@ -211,7 +212,7 @@
 
 .people__container-git {
   grid-column: 4;
-  grid-row: 5 / 13;
+  grid-row: 6 / 13;
   background-color: #17517f;
   color: #ffffff;
   text-align: center;
