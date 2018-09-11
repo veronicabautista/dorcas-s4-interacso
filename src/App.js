@@ -15,26 +15,34 @@ class App extends Component {
       currentDataboard: 0,
       currentTransition: "0.5s",
       currentSlideLeft: "0",
-      totalDataboards: 4
+      totalDataboards: 5
     }
-    this.showNextDashboard = this.showNextDashboard.bind(this)
+    this.showNextDashboard = this.showNextDashboard.bind(this);
   }
 
-  componentDidMount() {
-    this.effect = setInterval(this.showNextDashboard, 3000);
-  }
+  // componentDidMount() {
+  //   this.effect = setInterval(this.showNextDashboard, 3000);
+  // }
 
   showNextDashboard(){
-    if (this.state.currentDataboard == this.state.totalDataboards) {
+    if (this.state.currentDataboard == this.state.totalDataboards - 1) {
+      clearInterval(this.effect);
       this.setState({
         currentDataboard: 0,
-        currentSlideLeft: "0"
-      })
+        currentSlideLeft: "0",
+        currentTransition: "none"
+      });
+
+      this.effect = setInterval(this.showNextDashboard, 3000);
+
     } else {
-      const newSlide = this.state.currentDataboard * -100;
       this.setState({
         currentDataboard: this.state.currentDataboard + 1,
-        currentSlideLeft: `${newSlide}%`
+      });
+      const newSlide = this.state.currentDataboard * -100;
+      this.setState({
+        currentSlideLeft: `${newSlide}%`,
+        currentTransition: "0.5s"
       })
     }
   }
@@ -46,10 +54,11 @@ class App extends Component {
    }
     return (
       <div className="visor" style={sliderStyles}>
-        <Calendar apiService = {this.apiService}/>
         <Projects apiService = {this.apiService}/>
+        <Calendar apiService = {this.apiService}/>
         <ProjectDetail />
         <Team apiService = {this.apiService}/>
+        <Calendar apiService = {this.apiService}/>
       </div>
     );
   }
