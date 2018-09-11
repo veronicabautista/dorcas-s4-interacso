@@ -18,9 +18,9 @@ class App extends Component {
     this.showNextDashboard = this.showNextDashboard.bind(this)
   }
 
-  // componentDidMount() {
-  //   this.effect = setInterval(this.showNextDashboard, 3000);
-  // }
+  componentDidMount() {
+    this.effect = setInterval(this.showNextDashboard, 3000);
+  }
 
   showNextDashboard(){
     if (this.state.currentDataboard == this.state.totalDataboards) {
@@ -47,7 +47,7 @@ class App extends Component {
         <Calendar apiService = {this.apiService}/>
         <Projects apiService = {this.apiService}/>
         <ProjectDetail />
-        <Team />
+        <Team apiService = {this.apiService}/>
       </div>
     );
   }
