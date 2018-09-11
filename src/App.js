@@ -4,6 +4,8 @@ import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Team from './components/Team';
 import './App.css';
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.compact.css';
 
 class App extends Component {
   constructor(props){

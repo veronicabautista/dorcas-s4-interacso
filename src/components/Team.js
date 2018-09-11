@@ -1,5 +1,8 @@
 import React from "react";
 import Header from './Header';
+import WeekTasksChart from './WeekTasksChart';
+import WeekCommitsChart from './WeekCommitsChart';
+import TeamStatusBar from './TeamStatusBar';
 import Notifications from './Notifications';
 import '../App.css'
 import Env from '../data/.env.json';
@@ -11,116 +14,159 @@ class Team extends React.Component {
       title: "Equipo"
     }
     this.state = {
+      weekChartData: [],
+      memberPics: [],
       tasksWinner: {},
       commitsWinner: {}
     }
+    this.getTeamData = this.getTeamData.bind(this);
   }
 
   componentDidMount() {
+    this.getTeamData();
     this.getKillerInfo();
   }
 
-  getKillerInfo() {
-    if(typeof Env !== "undefined" & Env.token !== "undefined") {
-      fetch(
-        this.props.apiService + 'team',
-        {
-          method: 'get',
-          withCredentials: true,
-          headers: {
-            'Cache-Control': 'no-cache',
-            'Authorization': Env.token,
-            'Content-Type': 'application/json'
-          }
-        }
-      ).then(response => {
-        if(response.status === 401){
-          throw Error(response.statusText);
-        } else {
-          return response.json();
+  getTeamData() {
+    fetch(
+      this.props.apiService + 'team',
+      {
+        method: 'get',
+        withCredentials: true,
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Authorization': Env.token,
+          'Content-Type': 'application/json'
         }
       }
-    ).then(json => {
-      this.getTasksWinner(json);
-      this.getCommitsWinner(json);
-    }).catch(error => {
-      alert("El token es incorrecto");
-      console.error(error);
+    ).then(response => {
+      return response.json();
+    }
+  ).then(json => {
+    let teamData = [];
+    let memberPicsData = [];
+    let averageCommits = 0;
+    let averageTask = 0;
+
+    console.log(json.data)
+    json.data.forEach(person => {
+      // Recorro data del api y saco nombre y nro de tasks de cada uno
+      averageCommits = averageCommits + person.commits
+      averageTask = averageTask + person.tasks
+      teamData.push({
+        member: person.nombre,
+        tasks: person.tasks,
+        commits: person.commits
+      });
+      // Recorro data del api y saco la foto de cada uno
+      memberPicsData.push(person.photo);
     });
-  } else {
-    alert("No esta usted autorizado");
-  }
+    this.setState({
+      weekChartData: teamData,
+      memberPics: memberPicsData,
+      averageTask: averageTask/json.data.length,
+      averageCommits: averageCommits/json.data.length
+    })
+  });
 }
 
-  getTasksWinner(json) {
-    let maxTasks = 0;
-    let winnerTasksObj = {};
-    for (let i = 0; i < json.data.length; i++) {
-      if (json.data[i].tasks > maxTasks) {
-        maxTasks = json.data[i].tasks;
-        winnerTasksObj = json.data[i];
+getKillerInfo() {
+  if(typeof Env !== "undefined" & Env.token !== "undefined") {
+    fetch(
+      this.props.apiService + 'team',
+      {
+        method: 'get',
+        withCredentials: true,
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Authorization': Env.token,
+          'Content-Type': 'application/json'
+        }
+      }
+    ).then(response => {
+      if(response.status === 401){
+        throw Error(response.statusText);
+      } else {
+        return response.json();
       }
     }
-    this.setState({
-      tasksWinner: winnerTasksObj,
-    });
-  }
+  ).then(json => {
+    this.getTasksWinner(json);
+    this.getCommitsWinner(json);
+  }).catch(error => {
+    alert("El token es incorrecto");
+    console.error(error);
+  });
+} else {
+  alert("No esta usted autorizado");
+}
+}
 
-  getCommitsWinner(json) {
-    let maxCommits = 0;
-    let winnerCommitsObj = {};
-    json.data.map(peopleData => {
-      if (peopleData.commits > maxCommits) {
-        maxCommits = peopleData.commits;
-        winnerCommitsObj = peopleData;
-      }
-    });
-    this.setState({
-      commitsWinner: winnerCommitsObj,
-    });
+getTasksWinner(json) {
+  let maxTasks = 0;
+  let winnerTasksObj = {};
+  for (let i = 0; i < json.data.length; i++) {
+    if (json.data[i].tasks > maxTasks) {
+      maxTasks = json.data[i].tasks;
+      winnerTasksObj = json.data[i];
+    }
   }
+  this.setState({
+    tasksWinner: winnerTasksObj,
+  });
+}
 
-  render() {
-    return (
-      <div className="team__container databoard">
-        <Header title={this.texts.title} />
-        <div className="main__container-team">
-          <div className="dashborad chart__tasks">
-            <p className="tasks-title">Tareas Semana</p>
-            <div className="tasks-pic">
-            </div>
-          </div>
-          <div className="dashborad chart__commits">
-            <p className="commits-title">Commits Semana</p>
-            <div className="commits-pic"></div>
-          </div>
-          <div className="dashborad average__container-commits">
-            <p className="commits-number">5</p>
-            <p className="commits-text">Commits/dia/persona</p>
-          </div>
-          <div className="dashborad average__container-tasks">
-            <p className="tasks-number">4</p>
-            <p className="tasks-text">Tareas/dia/persona</p>
-          </div>
-          <div className="dashborad people__container-asana">
-            <p className="asana-title">Asana killer</p>
-            <img className="profile-pic" src={this.state.tasksWinner.photo}></img>
-            <p className="killer-name">{this.state.tasksWinner.nombre}</p>
-            <p className="killer-record">{this.state.tasksWinner.tasks}</p>
-            <p className="killer-detail">Tareas completadas esta semana</p>
-          </div>
-          <div className="dashborad people__container-git">
-            <p className="git-title">Git killer</p>
-            <img className="profile-pic" src={this.state.commitsWinner.photo}></img>
-            <p className="killer-name">{this.state.commitsWinner.nombre}</p>
-            <p className="killer-record">{this.state.commitsWinner.commits}</p>
-            <p className="killer-detail">Commits esta semana</p>
-          </div>
+getCommitsWinner(json) {
+  let maxCommits = 0;
+  let winnerCommitsObj = {};
+  json.data.map(peopleData => {
+    if (peopleData.commits > maxCommits) {
+      maxCommits = peopleData.commits;
+      winnerCommitsObj = peopleData;
+    }
+  });
+  this.setState({
+    commitsWinner: winnerCommitsObj,
+  });
+}
+
+
+render() {
+  return (
+    <div className="team__container databoard">
+      <Header title={this.texts.title} />
+      <div className="main__container-team">
+        <WeekTasksChart
+        data={this.state.weekChartData}
+        memberPics={this.state.memberPics}
+        />
+        <WeekCommitsChart
+        data={this.state.weekChartData}
+        memberPics={this.state.memberPics}
+        />
+        <TeamStatusBar
+        averageTask={this.state.averageTask}
+        averageCommits={this.state.averageCommits}
+        />
+        <div className="dashborad people__container-asana">
+          <p className="asana-title">Asana killer</p>
+          <img className="profile-pic" src={this.state.tasksWinner.photo}></img>
+          <p className="killer-name">{this.state.tasksWinner.nombre}</p>
+          <p className="killer-record">{this.state.tasksWinner.tasks}</p>
+          <p className="killer-detail">Tareas completadas esta semana</p>
         </div>
-        <Notifications />
+        <div className="dashborad people__container-git">
+          <p className="git-title">Git killer</p>
+          <img className="profile-pic" src={this.state.commitsWinner.photo}></img>
+          <p className="killer-name">{this.state.commitsWinner.nombre}</p>
+          <p className="killer-record">{this.state.commitsWinner.commits}</p>
+          <p className="killer-detail">Commits esta semana</p>
+        </div>
       </div>
-    );
-  }
+      <Notifications />
+    </div>
+  );
+}
 }
 
 export default Team;
