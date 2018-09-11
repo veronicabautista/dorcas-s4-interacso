@@ -48,8 +48,8 @@ class Team extends React.Component {
         }
       }
     ).then(json => {
-      const teamData = [];
-      const memberPicsData = [];
+      let teamData = [];
+      let memberPicsData = [];
       let averageCommits = 0;
       let averageTask = 0;
 
