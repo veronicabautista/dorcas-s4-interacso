@@ -3,7 +3,7 @@ import React from 'react';
 class TeamStatusBar extends React.Component {
   render(){
     return (
-      <div>
+      <div className="average__container">
         <div className="dashborad average__container-commits">
           <p className="commits-number">{this.props.averageCommits}</p>
           <p className="commits-text">Commits/dia/persona</p>

@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       currentDataboard: 0,
       currentTransition: "0.5s",
-      currentSlideLeft: "-100%",
+      currentSlideLeft: "-300%",
       totalDataboards: 4
     }
     this.showNextDashboard = this.showNextDashboard.bind(this)
