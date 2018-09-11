@@ -14,14 +14,14 @@ class App extends Component {
     this.state = {
       currentDataboard: 0,
       currentTransition: "0.5s",
-      currentSlideLeft: "-300%",
+      currentSlideLeft: "0",
       totalDataboards: 4
     }
     this.showNextDashboard = this.showNextDashboard.bind(this)
   }
 
   componentDidMount() {
-    this.effect = setInterval(this.showNextDashboard, 30000000);
+    this.effect = setInterval(this.showNextDashboard, 15000);
   }
 
   showNextDashboard(){
