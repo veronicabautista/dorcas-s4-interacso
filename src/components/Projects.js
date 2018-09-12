@@ -79,11 +79,11 @@ class Projects extends React.Component {
         <Header title= {this.texts.title} />
         <ProjectListStatusBar apiService= {this.props.apiService} />
         <div className= "statistics__chart">
-          <div className= "chart-commits">
+          <div className= "chart__details">
             <p>Proyectos más activos (commits)</p>
             <MostCommitsChart data= {this.state.projectsCharts} />
           </div>
-          <div className= "chart-commits">
+          <div className= "chart__details">
             <p>Proyectos más activos (horas)</p>
             <MostHoursChart hours= {this.state.hoursCharts} />
           </div>
