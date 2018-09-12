@@ -10,18 +10,18 @@ import 'devextreme/dist/css/dx.light.compact.css';
 class App extends Component {
   constructor(props){
     super(props);
-    this.apiService = 'https://databoards-api.interacso.com/';
-    this.state = {
+    this.apiService= 'https://databoards-api.interacso.com/';
+    this.state= {
       currentDataboard: 0,
       currentTransition: "0.5s",
       currentSlideLeft: "0",
       totalDataboards: 5
     }
-    this.showNextDashboard = this.showNextDashboard.bind(this);
+    this.showNextDashboard= this.showNextDashboard.bind(this);
   }
 
   componentDidMount() {
-    this.effect = setInterval(this.showNextDashboard, 3000);
+    this.effect= setInterval(this.showNextDashboard, 3000);
   }
 
   showNextDashboard(){
@@ -33,13 +33,13 @@ class App extends Component {
         currentTransition: "none"
       });
 
-      this.effect = setInterval(this.showNextDashboard, 3000);
+      this.effect= setInterval(this.showNextDashboard, 3000);
 
     } else {
       this.setState({
         currentDataboard: this.state.currentDataboard + 1,
       });
-      const newSlide = this.state.currentDataboard * -100;
+      const newSlide= this.state.currentDataboard * -100;
       this.setState({
         currentSlideLeft: `${newSlide}%`,
         currentTransition: "0.5s"
@@ -48,17 +48,17 @@ class App extends Component {
   }
 
   render() {
-    const sliderStyles = {
-     left: this.state.currentSlideLeft,
-     transition: this.state.currentTransition
-   }
+    const sliderStyles= {
+      left: this.state.currentSlideLeft,
+      transition: this.state.currentTransition
+    }
     return (
-      <div className="visor" style={sliderStyles}>
-        <Calendar apiService = {this.apiService}/>
-        <Projects apiService = {this.apiService}/>
+      <div className= "visor" style={sliderStyles}>
+        <Calendar apiService= {this.apiService}/>
+        <Projects apiService= {this.apiService}/>
         <ProjectDetail />
-        <Team apiService = {this.apiService}/>
-        <Calendar apiService = {this.apiService}/>
+        <Team apiService= {this.apiService}/>
+        <Calendar apiService= {this.apiService}/>
       </div>
     );
   }

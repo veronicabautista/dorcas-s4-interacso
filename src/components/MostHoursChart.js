@@ -1,14 +1,13 @@
 import React from 'react';
 import { Chart } from 'devextreme-react';
 
-
-const settings =
+const settings=
 {
   type: "bar",
   argumentField: "hoursName",
   color: "green"
 };
-const series  =
+const series=
 [
   {
     color: "#57718D",
@@ -23,14 +22,12 @@ const series  =
       }
     }
   },
-
 ];
-const size =
+const size=
 {
   height: 300
-
 }
-const axisSettings =
+const axisSettings=
 {
   label: {
     overlappingBehavior: "none",
@@ -44,9 +41,8 @@ const axisSettings =
     visible: false
   },
    maxValueMargin: 0.1,
-
 }
-const legendsSettings = {
+const legendsSettings= {
   visible: false
 }
 
@@ -55,16 +51,16 @@ class MostHoursChart extends React.Component {
   render(){
     return (
       <Chart
-        dataSource={this.props.hours}
-        commonSeriesSettings={settings}
-        series={series}
-        size={size}
-        argumentAxis={axisSettings}
-        valueAxis={axisSettings}
-        legend={legendsSettings}
+        dataSource= {this.props.hours}
+        commonSeriesSettings= {settings}
+        series= {series}
+        size= {size}
+        argumentAxis= {axisSettings}
+        valueAxis= {axisSettings}
+        legend= {legendsSettings}
       />
-      );
-      }
+    );
   }
+}
 
-  export default MostHoursChart;
+export default MostHoursChart;

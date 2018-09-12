@@ -20,7 +20,6 @@
 .day__container--with-event {
   border-bottom: solid 10px $eventDetail;
 }
-
 .day__notifications {
   font-size: $normal;
   color: $futureEvent;
@@ -31,17 +30,15 @@
 .day__notifications-deadline--completed {
   color: $deadlineFinished;
 }
-.day__notifications-deadline--pastDeadline {
+.day__notifications-deadline--past-deadline {
   color: $deadlineUnfinished;
 }
-.day__notifications-deadline--nearbyDeadline {
+.day__notifications-deadline--nearby-deadline {
   color: $deadlineClose;
 }
-.day__notifications-deadline--gotSlack {
+.day__notifications-deadline--got-slack {
   color: $futureDeadline;
 }
-
-
 .deadline__point {
   width: 18px;
   height: 18px;
@@ -52,12 +49,12 @@
 .deadline__point--completed {
   background-color: $deadlineFinished;
 }
-.deadline__point--pastDeadline {
+.deadline__point--past-deadline {
   background-color: $deadlineUnfinished;
 }
-.deadline__point--nearbyDeadline {
+.deadline__point--nearby-deadline {
   background-color: $deadlineClose;
 }
-.deadline__point--gotSlack {
+.deadline__point--got-slack {
   background-color: $futureDeadline;
 }
