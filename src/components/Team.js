@@ -10,10 +10,10 @@ import Env from '../data/.env.json';
 class Team extends React.Component {
   constructor(props) {
     super(props)
-    this.texts = {
+    this.texts= {
       title: "Equipo"
     }
-    this.state = {
+    this.state= {
       weekChartData: [],
       memberPics: [],
       tasksWinner: {},
@@ -53,17 +53,17 @@ getKillerInfo() {
     console.error(error);
   });
   } else {
-    alert("No esta usted autorizado");
+    alert("No está usted autorizado");
   }
 }
 getAverage(json) {
-  let teamData = [];
-  let memberPicsData = [];
-  let averageCommits = 0;
-  let averageTask = 0;
+  let teamData= [];
+  let memberPicsData= [];
+  let averageCommits= 0;
+  let averageTask= 0;
   json.data.forEach(person => {
-    averageCommits = averageCommits + person.commits
-    averageTask = averageTask + person.tasks
+    averageCommits= averageCommits + person.commits
+    averageTask= averageTask + person.tasks
     teamData.push({
       member: person.nombre,
       tasks: person.tasks,
@@ -79,12 +79,12 @@ getAverage(json) {
   })
 }
 getTasksWinner(json) {
-  let maxTasks = 0;
-  let winnerTasksObj = {};
+  let maxTasks= 0;
+  let winnerTasksObj= {};
   for (let i = 0; i < json.data.length; i++) {
     if (json.data[i].tasks > maxTasks) {
-      maxTasks = json.data[i].tasks;
-      winnerTasksObj = json.data[i];
+      maxTasks= json.data[i].tasks;
+      winnerTasksObj= json.data[i];
     }
   }
   this.setState({
@@ -93,12 +93,12 @@ getTasksWinner(json) {
 }
 
 getCommitsWinner(json) {
-  let maxCommits = 0;
-  let winnerCommitsObj = {};
+  let maxCommits= 0;
+  let winnerCommitsObj= {};
   json.data.map(peopleData => {
     if (peopleData.commits > maxCommits) {
-      maxCommits = peopleData.commits;
-      winnerCommitsObj = peopleData;
+      maxCommits= peopleData.commits;
+      winnerCommitsObj= peopleData;
     }
   });
   this.setState({
@@ -107,34 +107,34 @@ getCommitsWinner(json) {
 }
 render() {
   return (
-    <div className="team__container databoard">
-      <Header title={this.texts.title} />
-      <div className="main__container-team">
+    <div className= "team__container databoard">
+      <Header title= {this.texts.title} />
+      <div className= "main__container-team">
         <WeekTasksChart
-          data={this.state.weekChartData}
-          memberPics={this.state.memberPics}
+          data= {this.state.weekChartData}
+          memberPics= {this.state.memberPics}
         />
         <WeekCommitsChart
-          data={this.state.weekChartData}
-          memberPics={this.state.memberPics}
+          data= {this.state.weekChartData}
+          memberPics= {this.state.memberPics}
         />
         <TeamStatusBar
-          averageTask={this.state.averageTask}
-          averageCommits={this.state.averageCommits}
+          averageTask= {this.state.averageTask}
+          averageCommits= {this.state.averageCommits}
         />
-        <div className="dashborad people__container-asana">
-          <p className="asana-title">Asana killer</p>
-          <img className="profile-pic" src={this.state.tasksWinner.photo}></img>
-          <p className="killer-name">{this.state.tasksWinner.nombre}</p>
-          <p className="killer-record">{this.state.tasksWinner.tasks}</p>
-          <p className="killer-detail">Tareas completadas esta semana</p>
+        <div className= "dashborad people__container-asana">
+          <p className= "asana-title">Asana killer</p>
+          <img className= "profile-pic" src={this.state.tasksWinner.photo}></img>
+          <p className= "killer-name">{this.state.tasksWinner.nombre}</p>
+          <p className= "killer-record">{this.state.tasksWinner.tasks}</p>
+          <p className= "killer-detail">Tareas completadas esta semana</p>
         </div>
-        <div className="dashborad people__container-git">
-          <p className="git-title">Git killer</p>
-          <img className="profile-pic" src={this.state.commitsWinner.photo}></img>
-          <p className="killer-name">{this.state.commitsWinner.nombre}</p>
-          <p className="killer-record">{this.state.commitsWinner.commits}</p>
-          <p className="killer-detail">Commits esta semana</p>
+        <div className= "dashborad people__container-git">
+          <p className= "git-title">Git killer</p>
+          <img className= "profile-pic" src={this.state.commitsWinner.photo}></img>
+          <p className= "killer-name">{this.state.commitsWinner.nombre}</p>
+          <p className= "killer-record">{this.state.commitsWinner.commits}</p>
+          <p className= "killer-detail">Commits esta semana</p>
         </div>
       </div>
       <Notifications />

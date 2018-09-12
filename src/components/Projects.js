@@ -9,14 +9,14 @@ import MostHoursChart from "./MostHoursChart";
 class Projects extends React.Component {
   constructor(props) {
     super(props);
-    this.texts = {
+    this.texts= {
       title: "Proyectos"
     };
-    this.state = {
+    this.state= {
       projectsCharts: [],
       hoursCharts: []
     };
-    this.getProjectsData = this.getProjectsData.bind(this);
+    this.getProjectsData= this.getProjectsData.bind(this);
   }
 
   componentDidMount() {
@@ -42,8 +42,7 @@ class Projects extends React.Component {
           }
         })
         .then(json => {
-          const projectsData = [];
-
+          const projectsData= [];
           for (var elemento in json.data[0].commitRank) {
             projectsData.push({
               projectName: elemento,
@@ -54,8 +53,7 @@ class Projects extends React.Component {
             projectsCharts: projectsData
           });
 
-          const hoursData = [];
-
+          const hoursData= [];
           for (var hoursProject in json.data[0].hourRank) {
             hoursData.push({
               hoursName: hoursProject,
@@ -72,23 +70,23 @@ class Projects extends React.Component {
           console.error(error);
         });
     } else {
-      alert("No esta usted autorizado");
+      alert("No está usted autorizado");
     }
   }
 
   render() {
     return (
-      <div className="projects__container databoard">
-        <Header title={this.texts.title} />
-        <ProjectListStatusBar apiService={this.props.apiService} />
-        <div className="statistics__chart">
-          <div className="chart-commits">
+      <div className= "projects__container databoard">
+        <Header title= {this.texts.title} />
+        <ProjectListStatusBar apiService= {this.props.apiService} />
+        <div className= "statistics__chart">
+          <div className= "chart-commits">
             <p>Proyectos más activos (commits)</p>
-            <MostCommitsChart data={this.state.projectsCharts} />
+            <MostCommitsChart data= {this.state.projectsCharts} />
           </div>
-          <div className="chart-commits">
+          <div className= "chart-commits">
             <p>Proyectos más activos (horas)</p>
-            <MostHoursChart hours={this.state.hoursCharts} />
+            <MostHoursChart hours= {this.state.hoursCharts} />
           </div>
         </div>
         <Notifications />

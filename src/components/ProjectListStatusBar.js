@@ -5,7 +5,7 @@ class ProjectListStatusBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    this.state= {
       projectsdata: []
     };
   }
@@ -42,51 +42,51 @@ class ProjectListStatusBar extends React.Component {
           console.error(error);
         });
     } else {
-      alert("No esta usted autorizado");
+      alert("No está usted autorizado");
     }
   }
 
   render() {
-    const projects = this.state.projectsdata;
+    const projects= this.state.projectsdata;
     return (
-      <div className="projects__statistics--container">
-        <div className="statistics__data projects__projects">
-          <div className="data-number">
+      <div className= "projects__statistics--container">
+        <div className= "statistics__data projects__projects">
+          <div className= "data-number">
             <p>{projects.active}</p>
           </div>
-          <div className="data-tags">
+          <div className= "data-tags">
             <p>Proyectos activos</p>
           </div>
         </div>
-        <div className="statistics__data projects__tasks">
-          <div className="data-number">
+        <div className= "statistics__data projects__tasks">
+          <div className= "data-number">
             <p>{projects.tasksTotal}</p>
           </div>
-          <div className="data-tags">
+          <div className= "data-tags">
             <p>tareas a completar</p>
           </div>
         </div>
-        <div className="statistics__data projects__weeks">
-          <div className="data-number">
+        <div className= "statistics__data projects__weeks">
+          <div className= "data-number">
             <p>{projects.tasksCompleted}</p>
           </div>
-          <div className="data-tags">
+          <div className= "data-tags">
             <p>completadas esta semana</p>
           </div>
         </div>
-        <div className="statistics__data projects__commits">
-          <div className="data-number">
+        <div className= "statistics__data projects__commits">
+          <div className= "data-number">
             <p>{projects.commits}</p>
           </div>
-          <div className="data-tags">
+          <div className= "data-tags">
             <p>commits</p>
           </div>
         </div>
-        <div className="statistics__data projects__hours">
-          <div className="data-number">
+        <div className= "statistics__data projects__hours">
+          <div className= "data-number">
             <p>{projects.hours}</p>
           </div>
-          <div className="data-tags">
+          <div className= "data-tags">
             <p>horas</p>
           </div>
         </div>
