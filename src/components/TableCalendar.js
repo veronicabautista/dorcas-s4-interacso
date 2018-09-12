@@ -7,6 +7,7 @@ class TableCalendar extends React.Component {
     if (typeof this.props.datesToPrint !== 'undefined') {
       this.getCalendarDates(this.props.datesToPrint);
     }
+    this.setDatesNotifications = this.setDatesNotifications.bind(this);
   }
 
   componentDidMount() {
