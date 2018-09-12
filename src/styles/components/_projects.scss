@@ -19,13 +19,13 @@
 .projects__hours {
   background-color: $statisticsDataHours;
 }
-.data-number {
+.data__number {
   color: $numbers;
   font-size: $xxx_large;
   font-weight: $semibold;
   margin: 0;
 }
-.data-tags {
+.data__tags {
   color: $paragraph;
   font-size: $normal;
   font-weight: $medium;
@@ -43,15 +43,7 @@
   grid-gap: 90px;
   margin-top: 70px;
 }
-.chart-commits {
-  background-color: $chartBackground;
-  padding-top: 50px;
-  font-family: $montserrat, $sansSe;
-  font-weight: $bold;
-  font-size: $large;
-  padding-left: 30px;
-}
-.chart-hours {
+.chart__details {
   background-color: $chartBackground;
   padding-top: 50px;
   font-family: $montserrat, $sansSe;

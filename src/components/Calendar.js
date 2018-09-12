@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import Table from './TableCalendar';
+import TableCalendar from './TableCalendar';
 
 class Calendar extends React.Component {
   constructor(props){
@@ -13,7 +13,7 @@ class Calendar extends React.Component {
     return (
       <div className= "databoard">
         <Header title= {this.texts.title}/>
-        <Table apiService= {this.props.apiService}/>
+        <TableCalendar apiService= {this.props.apiService}/>
       </div>
     );
   }

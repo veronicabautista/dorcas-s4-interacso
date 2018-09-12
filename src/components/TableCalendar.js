@@ -1,7 +1,7 @@
 import React from 'react';
 import Env from '../data/.env.json';
 
-class Table extends React.Component {
+class TableCalendar extends React.Component {
   constructor(props){
     super(props);
     this.milisecondsInADay= 86400000;
@@ -73,11 +73,11 @@ class Table extends React.Component {
       return "--completed";
     } else {
       if(dateObject.getTime() <= todayDate.getTime()) {
-        return "--pastDeadline";
+        return "--past-deadline";
       } else if(dateObject.getTime() > todayDate.getTime() && dateObject.getTime() <= warningDays) {
-        return "--nearbyDeadline";
+        return "--nearby-deadline";
       } else {
-        return "--gotSlack"
+        return "--got-slack"
       }
     }
 
@@ -184,7 +184,7 @@ class Table extends React.Component {
     const mondayPastWeekMiliseconds= this.milisecondsInADay * mondayPastWeek;
     const miliseconds= today.getTime() - mondayPastWeekMiliseconds;
     const startDate= new Date(miliseconds);
-    return startDate; //objeto con el día de inicio
+    return startDate;
   }
 
   render() {
@@ -196,4 +196,4 @@ class Table extends React.Component {
   }
 }
 
-export default Table;
+export default TableCalendar;

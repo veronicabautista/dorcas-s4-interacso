@@ -116,7 +116,7 @@ class Team extends React.Component {
     return (
       <div className= "team__container databoard">
         <Header title= {this.texts.title} />
-        <div className= "main__container-team">
+        <div className= "main__container--team">
           <WeekTasksChart
             data= {this.state.weekChartData}
             memberPics= {this.state.memberPics}
@@ -129,19 +129,19 @@ class Team extends React.Component {
             averageTask= {this.state.averageTask}
             averageCommits= {this.state.averageCommits}
           />
-          <div className= "dashborad people__container-asana">
-            <p className= "asana-title">Asana killer</p>
-            <img className= "profile-pic" src={this.state.tasksWinner.photo}></img>
-            <p className= "killer-name">{this.state.tasksWinner.nombre}</p>
-            <p className= "killer-record">{this.state.tasksWinner.tasks}</p>
-            <p className= "killer-detail">Tareas completadas esta semana</p>
+          <div className= "dashboard people__container--asana">
+            <p className= "asana__title">Asana killer</p>
+            <img className= "profile__pic" src={this.state.tasksWinner.photo}></img>
+            <p className= "killer__name">{this.state.tasksWinner.nombre}</p>
+            <p className= "killer__record">{this.state.tasksWinner.tasks}</p>
+            <p className= "killer__detail">Tareas completadas esta semana</p>
           </div>
-          <div className= "dashborad people__container-git">
-            <p className= "git-title">Git killer</p>
-            <img className= "profile-pic" src={this.state.commitsWinner.photo}></img>
-            <p className= "killer-name">{this.state.commitsWinner.nombre}</p>
-            <p className= "killer-record">{this.state.commitsWinner.commits}</p>
-            <p className= "killer-detail">Commits esta semana</p>
+          <div className= "dashboard people__container--git">
+            <p className= "git__title">Git killer</p>
+            <img className= "profile__pic" src={this.state.commitsWinner.photo}></img>
+            <p className= "killer__name">{this.state.commitsWinner.nombre}</p>
+            <p className= "killer__record">{this.state.commitsWinner.commits}</p>
+            <p className= "killer__detail">Commits esta semana</p>
           </div>
         </div>
         <Notifications />

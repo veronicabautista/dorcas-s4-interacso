@@ -39,8 +39,8 @@ class WeekCommitsChart extends React.Component {
 
   render(){
     return (
-      <div className= "dashborad chart__commits">
-        <p className= "commits-title">Commits Semana</p>
+      <div className= "dashboard chart__commits">
+        <p className= "commits__title">Commits Semana</p>
         <div className= "">
           <Chart
             dataSource= {this.props.data}
