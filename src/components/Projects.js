@@ -12,8 +12,6 @@ class Projects extends React.Component {
     this.texts= {
       title: "Proyectos"
     };
-<<<<<<< HEAD
-=======
     this.state= {
       projectsCharts: [],
       hoursCharts: []
@@ -75,7 +73,6 @@ class Projects extends React.Component {
     }
   }
 
->>>>>>> d07c3049625be3a486ad2da57b8333bbb3931879
   render() {
     return (
       <div className= "projects__container databoard">
