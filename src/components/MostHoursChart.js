@@ -1,7 +1,6 @@
 import React from 'react';
 import { Chart } from 'devextreme-react';
 
-
 const settings=
 {
   type: "bar",
@@ -23,12 +22,10 @@ const series=
       }
     }
   },
-
 ];
 const size=
 {
   height: 300
-
 }
 const axisSettings=
 {
@@ -44,7 +41,6 @@ const axisSettings=
     visible: false
   },
    maxValueMargin: 0.1,
-
 }
 const legendsSettings= {
   visible: false
@@ -63,8 +59,8 @@ class MostHoursChart extends React.Component {
         valueAxis= {axisSettings}
         legend= {legendsSettings}
       />
-      );
-      }
+    );
   }
+}
 
-  export default MostHoursChart;
+export default MostHoursChart;

@@ -9,8 +9,9 @@ class ProjectDetail extends React.Component {
       title: "Proyectos > IKEA JD"
     }
   }
+
   render(){
-     return (
+    return (
       <div className= "detailedprojects__container databoard">
         <Header title= {this.texts.title} />
         <div className= "detailedprojects__content">

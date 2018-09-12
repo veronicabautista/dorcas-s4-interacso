@@ -20,7 +20,6 @@
 .day__container--with-event {
   border-bottom: solid 10px $eventDetail;
 }
-
 .day__notifications {
   font-size: $normal;
   color: $futureEvent;
@@ -40,8 +39,6 @@
 .day__notifications-deadline--gotSlack {
   color: $futureDeadline;
 }
-
-
 .deadline__point {
   width: 18px;
   height: 18px;

@@ -289,21 +289,21 @@
 .commits-pic {
   width: 832px;
   height: 397px;
-  background-image: url("./images/commits.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0 auto;
   margin-top: 18px; }
 
-.team_member_photo {
+.team-member__photo {
   border-top: 1px solid white;
   display: flex;
   justify-content: space-around; }
-  .team_member_photo img {
-    border-radius: 100px;
-    width: 40px;
-    height: 40px;
-    margin-top: 20px; }
+
+.team-member__photo--circles {
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  margin-top: 20px; }
 
 .project__progress {
   background-color: #3dcef0;

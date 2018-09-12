@@ -3,12 +3,12 @@ import React from 'react';
 class MemberPhotosBar extends React.Component {
   render(){
     return (
-      <div className= "team_member_photo">
+      <div className= "team-member__photo">
         {this.props.memberPics.map((pic) =>
-        <img src= {pic}/>
-      )}
+          <img className= "team-member__photo--circles" src= {pic}/>
+        )}
       </div>
-      );
+    );
   }
 }
 

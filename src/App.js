@@ -49,9 +49,9 @@ class App extends Component {
 
   render() {
     const sliderStyles= {
-     left: this.state.currentSlideLeft,
-     transition: this.state.currentTransition
-   }
+      left: this.state.currentSlideLeft,
+      transition: this.state.currentTransition
+    }
     return (
       <div className= "visor" style={sliderStyles}>
         <Calendar apiService= {this.apiService}/>

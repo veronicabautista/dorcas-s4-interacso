@@ -34,41 +34,40 @@ class Projects extends React.Component {
           "Content-Type": "application/json"
         }
       })
-        .then(response => {
-          if (response.status === 401) {
-            throw Error(response.statusText);
-          } else {
-            return response.json();
-          }
-        })
-        .then(json => {
-          const projectsData= [];
-          for (var elemento in json.data[0].commitRank) {
-            projectsData.push({
-              projectName: elemento,
-              commits: json.data[0].commitRank[elemento]
-            });
-          }
-          this.setState({
-            projectsCharts: projectsData
+      .then(response => {
+        if (response.status === 401) {
+          throw Error(response.statusText);
+        } else {
+          return response.json();
+        }
+      })
+      .then(json => {
+        const projectsData= [];
+        for (var elemento in json.data[0].commitRank) {
+          projectsData.push({
+            projectName: elemento,
+            commits: json.data[0].commitRank[elemento]
           });
-
-          const hoursData= [];
-          for (var hoursProject in json.data[0].hourRank) {
-            hoursData.push({
-              hoursName: hoursProject,
-              time: json.data[0].hourRank[hoursProject]
-            });
-          }
-          this.setState({
-            hoursCharts: hoursData
-          });
-          console.log(hoursData);
-        })
-        .catch(error => {
-          alert("El token es incorrecto");
-          console.error(error);
+        }
+        this.setState({
+          projectsCharts: projectsData
         });
+        const hoursData= [];
+        for (var hoursProject in json.data[0].hourRank) {
+          hoursData.push({
+            hoursName: hoursProject,
+            time: json.data[0].hourRank[hoursProject]
+          });
+        }
+        this.setState({
+          hoursCharts: hoursData
+        });
+        console.log(hoursData);
+      })
+      .catch(error => {
+        alert("El token es incorrecto");
+        console.error(error);
+      });
     } else {
       alert("No está usted autorizado");
     }

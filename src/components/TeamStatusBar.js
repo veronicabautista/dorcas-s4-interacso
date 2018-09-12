@@ -13,7 +13,7 @@ class TeamStatusBar extends React.Component {
           <p className= "tasks-text">Tareas/dia/persona</p>
         </div>
       </div>
-      );
+    );
   }
 }
 
