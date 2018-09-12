@@ -1,7 +1,6 @@
 import React from 'react';
 import { Chart } from 'devextreme-react';
 
-
 const settings=
 {
   type: "bar",
@@ -24,7 +23,6 @@ const series=
       },
     }
   },
-
 ];
 const size=
 {

@@ -5,48 +5,44 @@ import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.compact.css';
 
 const settings=
-        {
-            type: "bar",
-            argumentField: "member",
-            color: "green"
-        };
+{
+  type: "bar",
+  argumentField: "member",
+  color: "green"
+};
 const series=
-       [
-        {
-          color: "#57718D",
-          valueField: "commits"
-        },
-
-      ];
-  const size=
-      {
-        height: 120
-
-      }
-  const axisSettings=
-      {
-        label: {
-          overlappingBehavior: "none",
-          visible: false
-        },
-        grid:{
-          visible: false
-        }
-
-      }
-  const legendsSettings= {
+[
+  {
+    color: "#57718D",
+    valueField: "commits"
+  },
+];
+const size=
+{
+  height: 12
+}
+const axisSettings=
+{
+  label: {
+    overlappingBehavior: "none",
+    visible: false
+  },
+  grid:{
     visible: false
   }
+}
+const legendsSettings= {
+  visible: false
+}
 
 class WeekCommitsChart extends React.Component {
-
 
   render(){
     return (
       <div className= "dashborad chart__commits">
         <p className= "commits-title">Commits Semana</p>
         <div className= "">
-        <Chart
+          <Chart
             dataSource= {this.props.data}
             commonSeriesSettings= {settings}
             series= {series}
@@ -54,11 +50,11 @@ class WeekCommitsChart extends React.Component {
             argumentAxis= {axisSettings}
             valueAxis= {axisSettings}
             legend= {legendsSettings}
-        />
-        <MemberPhotosBar memberPics= {this.props.memberPics}/>
+          />
+          <MemberPhotosBar memberPics= {this.props.memberPics}/>
         </div>
       </div>
-      );
+    );
   }
 }
 

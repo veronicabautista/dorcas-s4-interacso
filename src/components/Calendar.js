@@ -9,14 +9,14 @@ class Calendar extends React.Component {
       title: "Calendario"
     }
   }
-render() {
-  return (
-    <div className= "databoard">
-      <Header title= {this.texts.title}/>
-      <Table apiService= {this.props.apiService}/>
-    </div>
-  );
-}
+  render() {
+    return (
+      <div className= "databoard">
+        <Header title= {this.texts.title}/>
+        <Table apiService= {this.props.apiService}/>
+      </div>
+    );
+  }
 }
 
 export default Calendar;

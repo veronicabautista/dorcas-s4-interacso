@@ -25,22 +25,22 @@ class ProjectListStatusBar extends React.Component {
           "Content-Type": "application/json"
         }
       })
-        .then(response => {
-          if (response.status === 401) {
-            throw Error(response.statusText);
-          } else {
-            return response.json();
-          }
-        })
-        .then(json => {
-          this.setState({
-            projectsdata: json.data[0]
-          });
-        })
-        .catch(error => {
-          alert("El token es incorrecto");
-          console.error(error);
+      .then(response => {
+        if (response.status === 401) {
+          throw Error(response.statusText);
+        } else {
+          return response.json();
+        }
+      })
+      .then(json => {
+        this.setState({
+          projectsdata: json.data[0]
         });
+      })
+      .catch(error => {
+        alert("El token es incorrecto");
+        console.error(error);
+      });
     } else {
       alert("No está usted autorizado");
     }
